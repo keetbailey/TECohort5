@@ -71,7 +71,7 @@ drwxr-xr-x 1 kbailey 197121    0 May 21 16:06 Helloworld/
 ----
 
 . - current directory
-.. - One folder before current  
+.. - Parent   
 
 ----
 6.  What are the names of the files, including any dot-files, displayed in the
@@ -86,7 +86,8 @@ database, Helloworld/, Helloworld.sln
     the directory listing in Exercise 4?
 ----
 
-kbailey 
+database/
+Helloworld/
 
 
 ----
@@ -360,7 +361,7 @@ Don't forget to save the file in Notepad!
     work so it can be reviewed by an instructor.
 ----
 
-$ <enter the Git command to display status>
+$ <enter the Git command to display status> 
 
 $ <enter the Git command to "stage" all changes>
 
