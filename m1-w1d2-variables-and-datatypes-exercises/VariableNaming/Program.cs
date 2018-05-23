@@ -482,14 +482,18 @@ namespace VariableNaming
             Challenge: How many days will it take the pair to paint 623 rooms assuming they work 8 hours a day?.
             */
             int hoursWorkedDay = 8;
-            int oneRoomTotalFeet = (12 * 14);
+            int oneRoomTotalFeet = (12 + 12 + 14 + 14);
             int fiveRooms = oneRoomTotalFeet * 5;
-            double hoursBillPaints = 2.15;
-            double hoursJillPaints = 1.90;
-            double combinedHoursPainting = hoursBillPaints + hoursJillPaints;
-            double timeForFiveRooms = (fiveRooms / hoursWorkedDay) / combinedHoursPainting;
-            double daysFiveRooms = timeForFiveRooms / hoursWorkedDay;
-            Console.WriteLine(daysFiveRooms);
+            double rateBillPaints = oneRoomTotalFeet/ 2.15;
+            double rateJillPaints = oneRoomTotalFeet / 1.90;
+            double combinedHoursPainting = rateBillPaints + rateJillPaints;
+            double timeForOneRoom = oneRoomTotalFeet / combinedHoursPainting;
+            double timeFiveRooms = fiveRooms / combinedHoursPainting;
+            Console.WriteLine("It will take Jill and Bill " + timeFiveRooms + " hours to paint five rooms.");
+            double tooManyRooms = oneRoomTotalFeet * 623;
+            double sixTwentyThreeRooms = tooManyRooms / combinedHoursPainting;
+            double totalDaysSixTwentyThree = sixTwentyThreeRooms / hoursWorkedDay;
+            Console.WriteLine("It will take Jill and Bill " + totalDaysSixTwentyThree + " days to paint 623 rooms.");
             
             /*
             Create and assign variables to hold your first name, last name, and middle initial. Using concatenation,
