@@ -21,7 +21,7 @@ namespace Exercises
             {
                 return true;
             }
-            if ((n <= 1 || n >= 10) && outsideMode)
+            else if ((n <= 1 || n >= 10) && outsideMode)
             {
                 return true;
             }
