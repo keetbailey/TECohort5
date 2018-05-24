@@ -17,7 +17,8 @@ namespace Exercises
          */
         public int Diff21(int n)
         {
-            return 0;
+        return 0 ;
         }
+        
     }
 }

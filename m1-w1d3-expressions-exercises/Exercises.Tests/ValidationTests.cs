@@ -334,9 +334,9 @@ namespace Exercises.Tests
         [TestMethod]
         public void Old35()
         {
-            Assert.AreEqual(true, exercises.Old35(3), "Input: More20 (3)");
-            Assert.AreEqual(true, exercises.Old35(10), "Input: More20 (10)");
-            Assert.AreEqual(false, exercises.Old35(15), "Input: More20 (15)");
+            Assert.AreEqual(true, exercises.Old35(3), "Input: Old35 (3)");
+            Assert.AreEqual(true, exercises.Old35(10), "Input: Old35 (10)");
+            Assert.AreEqual(false, exercises.Old35(15), "Input: Old35 (15)");
         }
 
         /*

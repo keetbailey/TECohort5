@@ -20,6 +20,14 @@ namespace Exercises
          */
         public string AlarmClock(int day, bool vacation)
         {
+            if (vacation == true) 
+            {
+                return "7:00";
+            }
+            else if (vacation == true)
+                {
+                return "10:00";
+            }
             return "";
         }
 
