@@ -17,8 +17,17 @@ namespace Exercises
        */
         public bool PosNeg(int a, int b, bool negative)
         {
-            return false;
+            if (negative && negative)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
         }
+        
 
     }
 }
