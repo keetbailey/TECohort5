@@ -17,6 +17,7 @@ namespace Exercises
          */
         public int CountEvens(int[] nums)
         {
+            if (int[nums] )
             return 0;
         }
 
