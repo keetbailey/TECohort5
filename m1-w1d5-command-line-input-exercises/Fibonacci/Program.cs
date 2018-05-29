@@ -22,6 +22,18 @@ namespace Fibonacci
          */
         static void Main(string[] args)
         {
+            Console.Write("Display an integer value: ");
+            string intValue = Console.ReadLine();
+            int n = 0;
+            int[] intValue2 = new int[n + 2];
+            intValue2[0] = 0;
+            intValue2[1] = 1;
+            for (int i= 0; i < intValue.Length; i++)
+            {
+                
+
+            }
+
         }
     }
 }

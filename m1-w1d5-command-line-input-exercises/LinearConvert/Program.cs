@@ -26,10 +26,21 @@ namespace LinearConvert
 
         static void Main(string[] args)
         {
-            Console.Write("Enter a length");
-            Console.ReadLine();
+            Console.Write("Enter a length: ");
+            string lengthInput = Console.ReadLine();
+            Console.WriteLine("");
             Console.Write("Is the measurement in (m)eters or (f)eet? ");
-            Console.ReadLine();
+            string measurementInput = Console.ReadLine();
+            {
+                int totalFeet = int.Parse(lengthInput);
+                int totalMeter = int.Parse(lengthInput);
+                int convertToFeet = (int)(totalFeet * 0.3048);
+                int convertToMeter = (int)(totalMeter * 3.2808399);
+                if (measurementInput == "m")
+                    Console.WriteLine(lengthInput + "m is " + convertToMeter + "f ");
+                else if (measurementInput == "f")
+                    Console.WriteLine(lengthInput + "f is " + convertToFeet + "m ");
+            }
 
 
             

@@ -40,7 +40,8 @@ namespace TempConvert
                 if (inputUnit == "C")
                 Console.WriteLine(inputTemp + "C " + "is " + convertToFahrenheit + "F. ");
                 else if (inputUnit == "F")
-                Console.WriteLine(inputTemp + "F " + "is " + convertToCelcius + "C. ");
+                    Console.WriteLine(inputTemp + "F " + "is " + convertToCelcius + "C. ");
+                }
             }
         
 

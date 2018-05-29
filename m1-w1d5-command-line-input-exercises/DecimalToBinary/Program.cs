@@ -31,7 +31,14 @@ namespace DecimalToBinary
 
         static void Main(string[] args)
         {
+            Console.Write("Enter a series of decimal values (separated by spaces)");
+            string input = Console.ReadLine();
+            Console.WriteLine("");
+            string[] stringArray = input.Split(' ');
+            for (int i = 0; i < stringArray.Length; i++) 
+            {
 
+            }
         }
     }
 }
