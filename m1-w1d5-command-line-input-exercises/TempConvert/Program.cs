@@ -27,6 +27,24 @@ namespace TempConvert
          */
         static void Main(string[] args)
         {
+            Console.Write("Please enter temperature: ");
+            string input = Console.ReadLine();
+            Console.WriteLine("");
+            Console.Write("Is the temperature in Celcius of Farenheit? (C) or (F) ");
+            Console.ReadLine();
+            string[] stringArray = input.Split();
+            for (int i=0; i < stringArray.Length; i++)
+            {
+                int tempCelsius = int.Parse(stringArray[i]);
+                int tempFahrenheit = int.Parse(stringArray[i]);
+                int convertToCelcius = (int)((tempFahrenheit - 32) / 1.8);
+                int converToFahrenheit = (int)((tempCelsius * 1.8) + 32);
+                
+            }
+
+
+
+
 
 
 
