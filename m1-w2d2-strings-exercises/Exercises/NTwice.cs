@@ -17,7 +17,7 @@ namespace Exercises
          */
         public string NTwice(string str, int n)
         {
-            return null;
+            return str.Substring(0, n) + str.Substring(str.Length - n);
         }
-    }
+    }                   //0, n gives He + str.Length - n gives everything after two char behind length -KSB
 }

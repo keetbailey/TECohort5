@@ -17,7 +17,7 @@ namespace Exercises
          */
         public string Left2(string str)
         {
-            return null;
+            return str.Substring(2) + str.Substring(0,2);
         }
-    }
+    }              /*moves 3rd, 4th, etc. to front and adds 0 (and 1) to end of string.KSB*/
 }

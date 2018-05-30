@@ -18,6 +18,7 @@ namespace Exercises
          */
         public bool HasBad(string str)
         {
+            
             return false;
         }
     }

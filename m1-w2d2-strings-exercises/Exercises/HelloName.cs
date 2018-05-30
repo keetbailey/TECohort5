@@ -16,6 +16,7 @@ namespace Exercises
          */
         public string HelloName(string name)
         {
+            Console.WriteLine("Hello" + name[0]);
             return null;
         }
 
