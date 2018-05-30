@@ -32,13 +32,17 @@ namespace DecimalToBinary
         static void Main(string[] args)
         {
             Console.Write("Enter a series of decimal values (separated by spaces)");
-            string input = Console.ReadLine();
+            string userInput = Console.ReadLine();
             Console.WriteLine("");
-            string[] stringArray = input.Split(' ');
-            for (int i = 0; i < stringArray.Length; i++) 
+            string[] stringArray = userInput.Split(' ');
+            for (int index = 0; index < stringArray.Length; index++)
             {
-
+                int value = int.Parse(stringArray[index]);
+                string binaryNum = Convert.ToString(value, 2); 
+                Console.WriteLine($"{stringArray[index]} in binary is {binaryNum}");
             }
+
+
         }
     }
 }

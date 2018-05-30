@@ -23,17 +23,24 @@ namespace Fibonacci
         static void Main(string[] args)
         {
             Console.Write("Display an integer value: ");
-            string intValue = Console.ReadLine();
-            int n = 0;
-            int[] intValue2 = new int[n + 2];
-            intValue2[0] = 0;
-            intValue2[1] = 1;
-            for (int i= 0; i < intValue.Length; i++)
+            string fibNumber = Console.ReadLine();
+            int fibNumber2 = int.Parse(fibNumber);
+            int firstValue = 0;
+            int nextValue = 1;
+            int incrementValue =0;
+            string fibSequence = "";
+
+                while(nextValue <= fibNumber2)
             {
+                incrementValue = firstValue + nextValue;
+                firstValue = nextValue;
+                nextValue = incrementValue;
+                fibSequence += ($"{firstValue},");
                 
 
+                
             }
-
+            Console.WriteLine($"{fibSequence}");
         }
     }
 }
