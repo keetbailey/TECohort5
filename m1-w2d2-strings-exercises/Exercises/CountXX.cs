@@ -17,12 +17,11 @@ namespace Exercises
         public int CountXX(string str)
         {
             int count = 0;
-            for (int idx = 0; idx < str.Length - 1; idx++)
-                if (str.Substring(idx, idx + 1).Equals("xx"))
-                {
-                    return count += 1;
-                }
-
+            for (int i = 0; i < str.Length - 1; i++)
+            {
+                if (str.Substring(i,2).Equals("xx"))
+                    count++;
+            }
             return count;
         }
     }

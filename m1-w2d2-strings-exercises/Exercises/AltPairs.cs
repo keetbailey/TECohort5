@@ -17,13 +17,16 @@ namespace Exercises
         public string AltPairs(string str)
         {
             string result = "";
-            for (int idx = 0; idx < str.Length-1; idx += 4)
-            {
-                
-                str.Substring(idx + 2);
-                result += str.Substring(idx, idx + 2);
+
+            for (int i = 0; i < str.Length; i += 4)
+            { 
+            result += str.Substring(i,1);
+
+            if(i+1 < str.Length)
+            
+                result += str.Substring(i + 1,1);
             }
-            return null;
+            return result;
         }
         
     }

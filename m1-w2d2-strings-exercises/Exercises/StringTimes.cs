@@ -16,11 +16,15 @@ namespace Exercises
          */
         public string StringTimes(string str, int n)
         {
+            string repeatString = "";
 
-            return str.Substring(0, n);
-            //string result = "";
-            //result = str.Substring(0,n);
-            //return result;
+            while(n>0)
+            {
+            repeatString += str;
+                n--;
+            }
+            return repeatString;
+            
         }
         
     }

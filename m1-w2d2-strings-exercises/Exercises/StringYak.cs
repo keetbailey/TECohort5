@@ -17,9 +17,15 @@ namespace Exercises
          */
         public string StringYak(string str)
         {
-            
-           
-            return null;
+            int wheresYak = str.IndexOf("yak");
+
+            while (wheresYak != -1)
+            {
+                str = str.Substring(0, wheresYak) + str.Substring(wheresYak + 3);
+                wheresYak = str.IndexOf("yak");
+
+            }
+            return str;
         }
     }
 }

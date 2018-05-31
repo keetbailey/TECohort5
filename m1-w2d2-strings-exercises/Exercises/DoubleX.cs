@@ -16,13 +16,23 @@ namespace Exercises
          */
         public bool DoubleX(string str)
         {
-            int idx = str.IndexOf("x");
-            if (idx <= -1)
-                return false;
-            else if (idx + 1 >= str.Length)
-                return false;
-            else
-                return str.Substring(idx + 1, idx + 2).Equals("x");
+            bool hasXX = false;
+            if (str.Contains("xx")) ;
+            //{
+            //    return false;
+
+            //    for (i = 0; i < str.Length;i++)
+            //      if (hasXX)
+            //        { 
+            //          str[i] == "x" && str[i] != "x";
+            //            return true;
+            //            break;
+            //      else if (hasXX)
+            //          str[if] == "x" && str[i] == "x";
+            //                return true;
+            //                break;
+            //}
+            return false;
         }
     }
 }

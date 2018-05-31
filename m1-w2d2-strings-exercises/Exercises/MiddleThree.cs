@@ -17,11 +17,10 @@ namespace Exercises
          */
         public string MiddleThree(string str)
         {
-            int stringLength = str.Length / 2;
-            int stringConvert = (int)str.Length;
-            if (str.Length <= 3)
-                return str;
-            return str.Substring(stringLength-1, stringConvert-2);
+            int strResult = str.Length / 2;
+            {
+                return str.Substring(strResult - 1, 3);
+            }
         }
     }
 }
