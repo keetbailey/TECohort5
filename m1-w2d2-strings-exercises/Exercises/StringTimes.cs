@@ -24,6 +24,5 @@ namespace Exercises
         }
         
     }
-    //string last2 = str.Substring(str.Length - 2, 2);
-    //        return last2+last2+last2;
+    
 }

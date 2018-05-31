@@ -19,11 +19,11 @@ namespace Exercises
         {
             //string result = "";
 
-            if (str.Length <= 2) ;
-            {
-                return str;
+            //if (str.Length <= 2) 
+            //{
+           return str;
             }
             
         }
     }
-}
+
