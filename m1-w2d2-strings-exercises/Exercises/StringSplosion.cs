@@ -16,7 +16,11 @@ namespace Exercises
          */
         public string StringSplosion(string str)
         {
-            return null;
+            string answer = "";
+            for (int idx = 0; idx < str.Length; idx++)
+                answer = answer + str.Substring(0, idx + 1);
+
+            return answer;
         }
-    }
+    }   
 }

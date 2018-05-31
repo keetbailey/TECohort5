@@ -17,7 +17,13 @@ namespace Exercises
         */
         public string StringX(string str)
         {
-            return null;
+            //string result = "";
+
+            if (str.Length <= 2) ;
+            {
+                return str;
+            }
+            
         }
     }
 }

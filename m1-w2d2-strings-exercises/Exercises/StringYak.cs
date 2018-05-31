@@ -17,6 +17,9 @@ namespace Exercises
          */
         public string StringYak(string str)
         {
+            bool result = true;
+            //if (str.StartsWith"yak")
+
             return null;
         }
     }
