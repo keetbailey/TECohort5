@@ -16,23 +16,19 @@ namespace Exercises
          */
         public bool DoubleX(string str)
         {
-            bool hasXX = false;
-            if (str.Contains("xx")) ;
-            //{
-            //    return false;
 
-            //    for (i = 0; i < str.Length;i++)
-            //      if (hasXX)
-            //        { 
-            //          str[i] == "x" && str[i] != "x";
-            //            return true;
-            //            break;
-            //      else if (hasXX)
-            //          str[if] == "x" && str[i] == "x";
-            //                return true;
-            //                break;
-            //}
-            return false;
+
+            int i = str.IndexOf("x");
+            
+            if (i >=0 || i == str[i+1])
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
     }
 }

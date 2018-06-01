@@ -20,8 +20,8 @@ namespace Exercises
 
             while(n>0)
             {
-            repeatString += str;
-                n--;
+            repeatString += str;  //repeatString = repeatString + str -KSB
+                n--; //decrement to stop loop -KSB
             }
             return repeatString;
             
