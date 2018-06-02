@@ -41,14 +41,19 @@ namespace Exercises
             Dictionary<string, string> animalGroups = new Dictionary<string, string>()
             {
 
-                {"RHINO", "Crash"},
-                {"GIRAFFE", "Tower"},
-                { "Lion", "Pride" }
-               
-
+               {"RHINO", "Crash" },
+                {"GIRAFFE", "Tower" },
+                {"ELEPHANT", "Herd" },
+                {"LION", "Pride" },
+                {"CROW", "Murder" },
+                {"PIGEON", "Kit" },
+                {"FLAMINGO", "Pat" },
+                {"DEER", "Herd" },
+                {"DOG", "Pack" },
+                {"CROCODILE", "Float" },
             };
             var key = animalName.ToUpper();
-            if (animalGroups.ContainsKey(animalName.ToUpper()))
+            if (animalGroups.ContainsKey(animalName.ToUpper())) /// I believe I could also have entered these all in u
                 {
                 return animalGroups[animalName.ToUpper()];
             }
