@@ -16,7 +16,8 @@ namespace Exercises
          */
         public List<string> Array2List(string[] stringArray)
         {
-            return null;
+
+            return new List<string>(stringArray);
         }
 
     }
