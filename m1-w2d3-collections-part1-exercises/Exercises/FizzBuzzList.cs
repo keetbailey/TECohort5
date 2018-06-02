@@ -22,7 +22,28 @@ namespace Exercises
          */
         public List<string> FizzBuzzList(int[] integerArray)
         {
-            return null;
+            List<string> numOutput = new List<string>();
+
+            foreach (int ourNum in integerArray)
+            {
+                if (ourNum % 3 == 0 && ourNum % 5 == 0)
+                {
+                    numOutput.Add("FizzBuzz");
+                }
+                else if (ourNum % 5 == 0)
+                {
+                    numOutput.Add("Buzz");
+                }
+                else if (ourNum % 3 == 0)
+                {
+                    numOutput.Add("Fizz");
+                }
+                else
+                {
+                    numOutput.Add(ourNum.ToString());
+                }
+            }
+            return numOutput; // had some guidance with this one. took me a bit, although I'm quite frustrated at how simple it actually is logicaly. this video helps although he worked with for loop and up to 100 https://www.youtube.com/watch?reload=9&v=QPZ0pIK_wsc&list=PL3jaRovXsentJKdc5hODjiBwT6geQfmi4&index=2 //
         }
 
     }

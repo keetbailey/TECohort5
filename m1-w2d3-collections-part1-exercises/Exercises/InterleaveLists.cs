@@ -18,6 +18,9 @@ namespace Exercises
          */
         public List<int> InterleaveLists(List<int> listOne, List<int> listTwo)
         {
+            List<int> listOutput = new List<int>();
+
+            //This one is just over my head. I'm thinking I want to assign an integer so that I can create a for loop, but I can't determine how to get the unequal lengths. 
             return null;
         }
     }
