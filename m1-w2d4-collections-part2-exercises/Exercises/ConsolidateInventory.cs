@@ -21,7 +21,21 @@ namespace Exercises
         public Dictionary<string, int> ConsolidateInventory(Dictionary<string, int> mainWarehouse,
             Dictionary<string, int> remoteWarehouse)
         {
-            return null;
+            foreach (KeyValuePair<string, int> kvp in remoteWarehouse)
+            {
+                string sku = kvp.Key;
+                int value = kvp.Value;
+
+                if (mainWarehouse.ContainsKey(sku))
+                {
+                    mainWarehouse[sku] = mainWarehouse[sku] + value;
+                }
+                else 
+                {
+                    mainWarehouse[sku] = value;
+                }
+            }
+            return mainWarehouse;  // this one I had ended up looking up to reference online as I wasn't grasping how to merge the dictionaries. I'm fairly certain I understand how they did it in this scenario.  
         }
     }
 }

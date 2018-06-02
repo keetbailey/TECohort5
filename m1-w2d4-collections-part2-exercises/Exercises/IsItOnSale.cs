@@ -34,6 +34,24 @@ namespace Exercises
          */
         public double IsItOnSale(string itemNumber)
         {
+
+            Dictionary<string, double> saleItems = new Dictionary<string, double>()
+            {
+
+                {"KITCHEN4001", 0.20 },
+                {"GARAGE1070", 0.15 },
+                {"LIVINGROOM", 0.10 },
+                {"KITCHEN6073", 0.40 },
+                {"BEDROOM3434", 0.40 },
+                {"BATH0073", 0.15 }
+
+            };
+            string onSale = itemNumber.ToUpper();
+            if (saleItems.ContainsKey(onSale))
+            {
+                return saleItems[itemNumber.ToUpper()];
+            }
+
             return 0.00;
         }
     }

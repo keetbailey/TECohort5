@@ -53,7 +53,7 @@ namespace Exercises
                 {"CROCODILE", "Float" },
             };
             var key = animalName.ToUpper();
-            if (animalGroups.ContainsKey(animalName.ToUpper())) /// I believe I could also have entered these all in u
+            if (animalGroups.ContainsKey(animalName.ToUpper())) 
                 {
                 return animalGroups[animalName.ToUpper()];
             }
