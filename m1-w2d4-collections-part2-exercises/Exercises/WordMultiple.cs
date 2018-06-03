@@ -19,7 +19,21 @@ namespace Exercises
          */
         public Dictionary<string, bool> WordMultiple(string[] words)
         {
-            return null;
+            Dictionary<string, bool> output = new Dictionary<string, bool>();
+
+            foreach (string letter in words)
+            {
+                if (!output.ContainsKey(letter)) // essentially if the string does not repeat itself, return false for the particular string
+                {
+                    output[letter] = false;
+                }
+                else
+                {
+                    output[letter] = true; 
+                }
+            }
+
+            return output; //this one threw me off for a bit
         }
     }
 }

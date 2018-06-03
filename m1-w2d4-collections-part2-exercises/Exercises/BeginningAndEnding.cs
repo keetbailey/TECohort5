@@ -18,8 +18,14 @@ namespace Exercises
          */
         public Dictionary<string, string> BeginningAndEnding(string[] words)
         {
-            return null; ///come back to this one
-        
+            Dictionary<string, string> output = new Dictionary<string, string>();
+            foreach (string word in words)
+            {
+                output[word.Substring(0, 1)] = word.Substring(word.Length - 1);
+            }
+
+            return output; ///had to come back to this one, now realizing I was again oversimplifying 
+
         }
     }
 }
