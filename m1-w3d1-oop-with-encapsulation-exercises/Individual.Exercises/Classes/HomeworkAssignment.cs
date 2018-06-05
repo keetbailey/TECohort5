@@ -55,7 +55,6 @@ namespace Individual.Exercises.Classes
                 else
                     return "F";
             }
-           
         }
 
         public HomeworkAssignment(int possibleMarks, string submitterName) //Constructor - no type associated

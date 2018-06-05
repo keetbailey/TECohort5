@@ -9,9 +9,9 @@ namespace Individual.Exercises.Classes
     public class Airplane
     {
         private string planeNumber;
-        private int bookedFirstClassSeats = 0;
+        private int bookedFirstClassSeats;
         private int totalFirstClassSeats;
-        private int bookedCoachSeats = 0;
+        private int bookedCoachSeats;
         private int totalCoachSeats;
 
         public string PlaneNumber //Property 
@@ -37,7 +37,7 @@ namespace Individual.Exercises.Classes
         {
             get
             {
-                return totalFirstClassSeats - bookedFirstClassSeats;
+                return totalFirstClassSeats - BookedFirstClassSeats;
             }
         }
         public int TotalFirstClassSeats //Property 
@@ -58,44 +58,53 @@ namespace Individual.Exercises.Classes
                 bookedCoachSeats = value;
             }
         }
-        public int AvailableCoachSeats //Property 
-        {
-            get
-            {
-                return TotalFirstClassSeats - BookedFirstClassSeats;
-            }
-        }
         public int TotalCoachSeats
         {
             get
             {
-                return TotalCoachSeats;
+                return totalCoachSeats;
+            }
+        }
+        public int AvailableCoachSeats //Property 
+        {
+            get
+            {
+                return totalCoachSeats - BookedCoachSeats;
             }
         }
 
         public Airplane(string planeNumber, int totalFirstClassSeats, int totalCoachSeats) // constructor 
         {
             this.planeNumber = planeNumber;
-            this.totalCoachSeats = totalCoachSeats;
             this.totalFirstClassSeats = totalFirstClassSeats;
+            this.totalCoachSeats = totalCoachSeats;
             
+
         }
 
         public bool ReserveSeats(bool forFirstClass, int totalNumberOfSeats)
         {
             if (forFirstClass)
             {
-                if (totalNumberOfSeats > AvailableFirstClassSeats) 
+                if (totalNumberOfSeats <= AvailableFirstClassSeats)
                 {
-                    return false;
+                    bookedFirstClassSeats += totalNumberOfSeats;
+                    return true;
                 }
             }
-            else if (totalNumberOfSeats > AvailableCoachSeats) 
+            else
             {
-                return false;
+                if (totalNumberOfSeats <= AvailableCoachSeats)
+                {
+                    bookedCoachSeats += totalNumberOfSeats;
+                    return true;
+                }
             }
-            return true;
+                
+            return false;
+        }
+            
         }
 
-    }
 }
+

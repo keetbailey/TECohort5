@@ -17,10 +17,21 @@ namespace Individual.Exercises.Classes
             {
                 return piecesOfFruitLeft;
             }
+            private set
+            {
+                piecesOfFruitLeft = value;
+            }
+        }
+        public string TypeOfFruit
+        {
+            get
+            {
+                return typeOfFruit;
+            }
         }
         public FruitTree(string typeOfFruit, int startingPiecesOfFruit)
         {
-            this.piecesOfFruitLeft = startingPiecesOfFruit;
+            piecesOfFruitLeft = startingPiecesOfFruit;
             this.typeOfFruit = typeOfFruit;
         }
         public bool PickFruit(int numberOfPiecesToRemove)
