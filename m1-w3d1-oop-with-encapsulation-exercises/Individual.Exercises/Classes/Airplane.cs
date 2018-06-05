@@ -8,12 +8,11 @@ namespace Individual.Exercises.Classes
 {
     public class Airplane
     {
-        private string planeNumber = "";
+        private string planeNumber;
         private int bookedFirstClassSeats = 0;
-        private int availableFirstClassSeats = 0;
-        private int totalFirstClassSeats = 0;
+        private int totalFirstClassSeats;
         private int bookedCoachSeats = 0;
-        private int availableCoachSeats = 0;
+        private int totalCoachSeats;
 
         public string PlaneNumber //Property 
         {
@@ -38,7 +37,7 @@ namespace Individual.Exercises.Classes
         {
             get
             {
-                return availableFirstClassSeats;
+                return totalFirstClassSeats - bookedFirstClassSeats;
             }
         }
         public int TotalFirstClassSeats //Property 
@@ -66,10 +65,37 @@ namespace Individual.Exercises.Classes
                 return TotalFirstClassSeats - BookedFirstClassSeats;
             }
         }
+        public int TotalCoachSeats
+        {
+            get
+            {
+                return TotalCoachSeats;
+            }
+        }
 
         public Airplane(string planeNumber, int totalFirstClassSeats, int totalCoachSeats) // constructor 
         {
-
+            this.planeNumber = planeNumber;
+            this.totalCoachSeats = totalCoachSeats;
+            this.totalFirstClassSeats = totalFirstClassSeats;
+            
         }
+
+        public bool ReserveSeats(bool forFirstClass, int totalNumberOfSeats)
+        {
+            if (forFirstClass)
+            {
+                if (totalNumberOfSeats > AvailableFirstClassSeats) 
+                {
+                    return false;
+                }
+            }
+            else if (totalNumberOfSeats > AvailableCoachSeats) 
+            {
+                return false;
+            }
+            return true;
+        }
+
     }
 }
