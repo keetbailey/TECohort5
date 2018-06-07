@@ -12,16 +12,20 @@ namespace Exercises.Tests
             SameFirstLast output = new SameFirstLast();
             Assert.AreEqual(false, output.IsItTheSame(new int[] { })); //if array length zero, return false
         }
+        [TestMethod]
         public void OneArrayLength()
         {
             SameFirstLast output = new SameFirstLast();
             Assert.AreEqual(true, output.IsItTheSame(new int[] { 1 }));// if array length is one (one is first and last element), return true
         }
-
+        [TestMethod]
         public void TwoPlusFrontAndBack()
         {
-            SameFirstLast output = new SameFirstLast();
-            //Assert.AreEqual
+            SameFirstLast exercises = new SameFirstLast();
+            Assert.AreEqual(true, exercises.IsItTheSame(new int[] { 1, 1 }));
+            Assert.AreEqual(false, exercises.IsItTheSame(new int[] { 1, 3 }));
+            Assert.AreEqual(false, exercises.IsItTheSame(new int[] { 1, 3, 3 }));
+            Assert.AreEqual(true, exercises.IsItTheSame(new int[] { 1, 3, 1 }));
         }
     }
     //public class SameFirstLast
