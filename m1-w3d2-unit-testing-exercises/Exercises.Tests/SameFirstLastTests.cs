@@ -19,7 +19,7 @@ namespace Exercises.Tests
             Assert.AreEqual(true, output.IsItTheSame(new int[] { 1 }));// if array length is one (one is first and last element), return true
         }
         [TestMethod]
-        public void TwoPlusFrontAndBack()
+        public void TwoPlusFrontAndBack() 
         {
             SameFirstLast exercises = new SameFirstLast();
             Assert.AreEqual(true, exercises.IsItTheSame(new int[] { 1, 1 }));

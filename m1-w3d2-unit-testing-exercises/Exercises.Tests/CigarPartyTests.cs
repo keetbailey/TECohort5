@@ -9,8 +9,8 @@ namespace Exercises.Tests
         [TestMethod]
         public void IsWeekend()
         {
-            CigarParty weekendTesting = new CigarParty();
-            Assert.AreEqual(false, weekendTesting.HaveParty(30, true));
+            CigarParty weekendTesting = new CigarParty();  //arrange  
+            Assert.AreEqual(false, weekendTesting.HaveParty(30, true)); //Assert/Act 
             Assert.AreEqual(true, weekendTesting.HaveParty(50, true));
             Assert.AreEqual(true, weekendTesting.HaveParty(70, true));
         }
