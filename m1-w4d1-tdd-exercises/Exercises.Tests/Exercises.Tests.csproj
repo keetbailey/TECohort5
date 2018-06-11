@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E3B85BF7-C57E-4575-BD4E-AD30772E4CA0}</ProjectGuid>
+    <ProjectGuid>{6137BD89-ED83-43F8-8694-3B15B30304DB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Exercises.Tests</RootNamespace>
@@ -52,19 +52,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="KataFizzBuzzTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StringBitsTests.cs" />
-    <Compile Include="AnimalGroupNameTests.cs" />
-    <Compile Include="CigarPartyTests.cs" />
-    <Compile Include="Lucky13Tests.cs" />
-    <Compile Include="MaxEnd3Tests.cs" />
-    <Compile Include="NonStartTests.cs" />
-    <Compile Include="SameFirstLastTests.cs" />
-    <Compile Include="WordCountTests.cs" />
+    <Compile Include="KataPrimeFactorsTests.cs" />
+    <Compile Include="KataRomanNumeralsTests.cs" />
+    <Compile Include="KataPotterTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Exercises\Exercises.csproj">
-      <Project>{105dff01-ca6d-4e9b-a0ec-ef6184791b6d}</Project>
+      <Project>{bb48f929-97f2-428a-be33-985886c4d34d}</Project>
       <Name>Exercises</Name>
     </ProjectReference>
   </ItemGroup>
@@ -90,7 +86,6 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
-	   or something else
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
