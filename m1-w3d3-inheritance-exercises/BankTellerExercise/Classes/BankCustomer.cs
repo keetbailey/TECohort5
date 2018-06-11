@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankTellerExercise.Classes
 {
-    class BankCustomer
+    public class BankCustomer
     {
         private string name;
         private string address;
@@ -57,19 +57,7 @@ namespace BankTellerExercise.Classes
         {
             accounts.Add(newAccount);
         }
-        public bool IsVip
-        {
-            get
-            {
-                DollarAmount totalBalance = new DollarAmount(0);
-
-                foreach (BankAccount account in accounts)
-                {
-                    totalBalance = totalBalance.Plus(accounts.Balance);
-                }
-
-                return totalBalance.Dollars >= 25000;
-            }
-        }
     }
-}
+}    
+
+

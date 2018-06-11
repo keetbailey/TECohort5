@@ -8,17 +8,17 @@ namespace BankTellerExercise.Classes
 {
     public class DollarAmount:IComparable
     {
-        private int totalAmountInCents;
+        private int amountInCents;
 
         public int TotalAmountInCents
         {
-            get { return totalAmountInCents; }
+            get { return amountInCents; }
         }
         public int Cents
         {
             get
             {
-                int remainder = totalAmountInCents % 100;
+                int remainder = amountInCents % 100;
                 return remainder;
             }
         }
@@ -26,7 +26,7 @@ namespace BankTellerExercise.Classes
         {
             get
             {
-                int quotient = totalAmountInCents / 100;
+                int quotient = amountInCents / 100;
                 return quotient;
             }
         }
@@ -34,36 +34,36 @@ namespace BankTellerExercise.Classes
         {
             get
             {
-                return totalAmountInCents < 0;
+                return amountInCents < 0;
             }
         }
         public DollarAmount(int totalCents)
         {
-            totalAmountInCents = totalCents;
+            amountInCents = totalCents;
         }
         public DollarAmount(int dollars, int cents)
         {
-            totalAmountInCents = (dollars * 100) + cents;
+            amountInCents = (dollars * 100) + cents;
         }
         public DollarAmount Minus(DollarAmount amountToSubtract)
         {
-            int difference = this.totalAmountInCents - amountToSubtract.totalAmountInCents;
+            int difference = this.amountInCents - amountToSubtract.amountInCents;
 
             return new DollarAmount(difference);
         }
         public DollarAmount Plus(DollarAmount amountToAdd)
         {
-            int newTotal = this.totalAmountInCents + amountToAdd.totalAmountInCents;
+            int newTotal = this.amountInCents + amountToAdd.amountInCents;
 
             return new DollarAmount(newTotal);
         }
         public int CompareTo(DollarAmount other)
         {
-            if (this.totalAmountInCents < other.totalAmountInCents)
+            if (this.amountInCents < other.amountInCents)
             {
                 return -1;
             }
-            else if (other.totalAmountInCents < this.totalAmountInCents)
+            else if (other.amountInCents < this.amountInCents)
             {
                 return 1;
             }
@@ -74,7 +74,7 @@ namespace BankTellerExercise.Classes
         }
         public override string ToString()
         {
-            return (totalAmountInCents / 100.00).ToString("C");
+            return (amountInCents / 100.00).ToString("C");
 
         }
     }
