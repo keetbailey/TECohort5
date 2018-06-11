@@ -23,7 +23,7 @@ namespace BankTellerExercise.Classes
                 accountNumber = value;
             }
         }
-        public string Name //property
+        public string AccountName //property
         {
             get
             {
@@ -63,7 +63,7 @@ namespace BankTellerExercise.Classes
             this.balance = balance;
         }
 
-        public BankAccount(string accountNumber, decimal balance)
+        public BankAccount(string accountNumber, decimal balance) //constructor 
         {
             this.accountNumber = accountNumber;
             this.balance = balance;
@@ -81,7 +81,8 @@ namespace BankTellerExercise.Classes
 
         public void Transfer(BankAccount destinationAccount, decimal transferAmount) //method 
         {
-            
+            this.Withdraw(transferAmount);
+            destinationAccount.Deposit(transferAmount);
         }
     }
 }

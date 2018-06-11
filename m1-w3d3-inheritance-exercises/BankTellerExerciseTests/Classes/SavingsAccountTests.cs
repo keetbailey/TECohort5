@@ -1,14 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using BankTellerExercise.Classes;
 
 namespace BankTellerExerciseTests.Classes
 {
-    class SavingsAccountTests
+    [TestClass]
+    public class SavingsAccountTests
     {
+        [TestMethod]
+        public void LessThan150() 
+        {
+        }
+        [TestMethod]
+        public void BalAfterCustDeposit() //deposit 
+        {
+
+        }
+        [TestMethod]
+        public void BalAfterWithdraw() //withdraw 
+        {
+
+        }
+        [TestMethod]
+        public void Transfer() //transer
+        {
+        }
     }
 }
