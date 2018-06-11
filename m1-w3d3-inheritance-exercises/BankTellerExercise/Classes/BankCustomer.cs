@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace BankTellerExercise.Classes
 {
-    public class BankCustomer
+    public class BankCustomer:BankAccount
     {
-        private string name;
+        private string accountName;
         private string address;
         private string phoneNumber;
         private List<BankAccount> accounts = new List<BankAccount>();
 
-        public string Name //property
+        public string AccountName //property
         {
             get
             {
-                return name;
+                return accountName;
             }
             set
             {
-                name = value;
+                accountName = value;
             }
         }
         public string Address//property
@@ -32,7 +32,7 @@ namespace BankTellerExercise.Classes
             }
             set
             {
-                address = value;
+                AccountNumber = value;
             }
         }
         public string PhoneNumber//property
@@ -43,7 +43,7 @@ namespace BankTellerExercise.Classes
             }
             set
             {
-                phoneNumber = value;
+                AccountNumber = value;
             }
         }
         public BankAccount[] Accounts//property 
@@ -56,6 +56,19 @@ namespace BankTellerExercise.Classes
         public void AddAccount(BankAccount newAccount) //method 
         {
             accounts.Add(newAccount);
+        }
+        public bool IsVip 
+        {
+            get
+            {
+                decimal totalBalance = 0;
+                foreach (BankAccount account in accounts)
+                {
+                    totalBalance += account.Balance;
+                }
+
+                return Balance >= 25000;
+            }
         }
     }
 }    

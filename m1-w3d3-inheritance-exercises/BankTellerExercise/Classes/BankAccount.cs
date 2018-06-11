@@ -8,19 +8,11 @@ namespace BankTellerExercise.Classes
 {
     public class BankAccount
     {
-        private string accountNumber;
-        private DollarAmount balance;
+        private string accountNumber = "";
+        private decimal balance;
         private string accountName;
 
-        public string AccountName
-        {
-            get
-            {
-                return accountName;
-            }
-        }
-
-        public string AccountNumber//property
+        public string AccountNumber //property 
         {
             get
             {
@@ -31,7 +23,19 @@ namespace BankTellerExercise.Classes
                 accountNumber = value;
             }
         }
-        public DollarAmount Balance//property
+        public string Name //property
+        {
+            get
+            {
+                return accountName;
+            }
+            set
+            {
+                accountName = value;
+            }
+        }
+
+        public decimal Balance //property 
         {
             get
             {
@@ -42,29 +46,42 @@ namespace BankTellerExercise.Classes
                 balance = value;
             }
         }
-        public DollarAmount Deposit(DollarAmount amountToDeposit)//method 
+        public BankAccount() //constructor 
         {
-            balance = balance.Plus(amountToDeposit);
-            return balance;
-        }
-        public DollarAmount Withdraw(DollarAmount amountToWithdraw)//method 
-        {
-            balance = balance.Minus(amountToWithdraw);
-            return balance;
-        }
-        public DollarAmount Transfer(BankAccount destinationAccount, DollarAmount transferAmount)//method 
-        {
-            this.Withdraw(transferAmount);
-            destinationAccount.Deposit(transferAmount);
-            return balance;
+            balance = 0;
         }
         public BankAccount(string accountName, string accountNumber) //constructor 
         {
             this.accountName = accountName;
             this.accountNumber = accountNumber;
-            balance = new DollarAmount(0);
+            balance = 0;
+        }
+        public BankAccount(string accountName, string accountNumber, decimal balance)//constructor 
+        {
+            this.accountName = accountName;
+            this.accountNumber = accountNumber;
+            this.balance = balance;
         }
 
+        public BankAccount(string accountNumber, decimal balance)
+        {
+            this.accountNumber = accountNumber;
+            this.balance = balance;
+        }
 
+        public virtual decimal Deposit(decimal amountToDeposit)//method 
+        {
+            return balance += amountToDeposit; 
+        }
+
+        public virtual decimal Withdraw(decimal amountToWithdraw)//method 
+        {
+            return balance -= amountToWithdraw;
+        } 
+
+        public void Transfer(BankAccount destinationAccount, decimal transferAmount) //method 
+        {
+            
+        }
     }
 }

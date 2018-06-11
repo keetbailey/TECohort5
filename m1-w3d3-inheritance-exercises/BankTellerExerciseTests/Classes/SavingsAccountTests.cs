@@ -8,15 +8,7 @@ using BankTellerExercise.Classes;
 
 namespace BankTellerExerciseTests.Classes
 {
-    class BankAccountTest
+    class SavingsAccountTests
     {
-        [TestMethod]
-        public void NewCustomer() //new cust with zero bal 
-        {
-            BankAccount account = new BankAccount("", "");
-            Assert.AreEqual(0, account.Balance);
-        }
-
     }
-    
 }
