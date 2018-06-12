@@ -81,7 +81,7 @@ namespace BankTellerExercise.Classes
 
         public void Transfer(BankAccount destinationAccount, decimal transferAmount) //method 
         {
-            this.Withdraw(transferAmount);
+            Withdraw(transferAmount);
             destinationAccount.Deposit(transferAmount);
         }
     }

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace BankTellerExercise.Classes
 {
-    class CheckingAccount : BankAccount
+    public class CheckingAccount:BankAccount
     {
+        public decimal feeBalance;
         public CheckingAccount(string accountName, string accountNumber, decimal balance)
         :base(accountName, accountNumber, balance)
         {
@@ -17,16 +18,18 @@ namespace BankTellerExercise.Classes
         {
         }
         public override decimal Withdraw(decimal amountToWithdraw)
-        {
-            base.Withdraw(amountToWithdraw);
-            if (Balance - amountToWithdraw >= -100M)
+        { 
+            feeBalance = Balance - 10;
+            if ((Balance - amountToWithdraw) > (-100))
             {
+                base.Withdraw(amountToWithdraw);
                 return Balance;
 
             }
-            else if (Balance - amountToWithdraw < 0.0M)
+            else if (Balance - amountToWithdraw < 0)
             {
-                return Balance - 10;
+               feeBalance = Balance - 10;
+                return feeBalance;
             }
             return Balance; 
         }

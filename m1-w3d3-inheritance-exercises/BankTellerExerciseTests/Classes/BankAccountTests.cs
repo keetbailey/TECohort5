@@ -19,7 +19,8 @@ namespace BankTellerExerciseTests.Classes
         [TestMethod]
         public void CurrentCustomerBal()
         {
-
+            BankAccount account = new BankAccount("", "", 500);
+            Assert.AreEqual(500, account.Balance);
         }
     }
 }
