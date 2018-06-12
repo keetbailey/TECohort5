@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankTellerExercise.Classes
 {
-    public class BankCustomer:BankAccount
+    public class BankCustomer
     {
         private string accountName;
         private string address;
@@ -32,7 +32,7 @@ namespace BankTellerExercise.Classes
             }
             set
             {
-                AccountNumber = value;
+                address = value;
             }
         }
         public string PhoneNumber//property
@@ -43,7 +43,7 @@ namespace BankTellerExercise.Classes
             }
             set
             {
-                AccountNumber = value;
+                phoneNumber = value;
             }
         }
         public BankAccount[] Accounts//property 
@@ -67,7 +67,7 @@ namespace BankTellerExercise.Classes
                     totalBalance += account.Balance;
                 }
 
-                return Balance >= 25000;
+                return totalBalance >= 25000;  ///no need to call out for totalBalance - totalBalance built into bool IsVip 
             }
         }
     }

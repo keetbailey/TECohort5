@@ -14,14 +14,18 @@ namespace BankTellerExerciseTests.Classes
         public void CustIsVIP()
         {
            BankCustomer customer = new BankCustomer();
-           Assert.AreEqual(true, !customer.IsVip); //looks funny, but if IsVIP originally defaults to false, then this reads, expected True, Actual true (!customerVIP = true)
+            customer.AddAccount(new CheckingAccount("", 20000));
+            customer.AddAccount(new SavingsAccount("", 5000));
+            Assert.AreEqual(true, customer.IsVip); 
            
         }
         [TestMethod]
-        public void CustNotVIP()
+        public void CustNotVIP()///correct to represent not VIP
         {
-           BankCustomer customer = new BankCustomer();
-            Assert.AreEqual(false, customer.IsVip);// IsVIP defaults to false, resulting in passing test for "false" actual. 
+            BankCustomer customer = new BankCustomer();
+            customer.AddAccount(new CheckingAccount("", 20000));
+            customer.AddAccount(new SavingsAccount("", 4999.99M)); //boundary testing - right at boundary 
+            Assert.AreEqual(false, customer.IsVip); 
         }
 
         [TestMethod]

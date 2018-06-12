@@ -46,10 +46,6 @@ namespace BankTellerExercise.Classes
                 balance = value;
             }
         }
-        public BankAccount() //constructor 
-        {
-            balance = 0;
-        }
         public BankAccount(string accountName, string accountNumber) //constructor 
         {
             this.accountName = accountName;

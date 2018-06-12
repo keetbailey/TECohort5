@@ -7,53 +7,26 @@ using System.Threading.Tasks;
 namespace Exercises
 {
     public class KataRomanNumerals
-    {        private readonly Dictionary<string, int> _roman2Arabic = new Dictionary<string, int>
-        {
-            {"M", 1000},
-            {"CM", 900},
-            {"D",  500},
-            {"CD", 400},
-            {"C",  100},
-            {"XC",  90},
-            {"L",   50},
-            {"XL",  40},
-            {"X",   10},
-            {"IX",   9},
-            {"V",    5},
-            {"IV",   4},
-            {"I",    1}                              
-        };
+    {
+        string[] romanOne = new string[] { "I", "II", "III" };
+        string[] romanTen = new string[] { "X" };
+        string[] romanHundred = new string[] { "C" };
+        string[] romandThousand = new string[] { "M" };
+        string[] numericOne = new string[] { "1", "2", "3" };
+        string[] numericTen = new string[] { "10"};
+        string[] numericHundred = new string[] {"100"};
+        string[] numericThousand = new string[] { "1000"};
 
-        public int ConvertToRomanNumeral(string romanNumeral)
+
+        public string ConvertToRomanNumeral(int n)
         {
-            int arabicNumeral = 0;
-            while (romanNumeral.Length != 0)
+            string romanNum = "";
+            if (n > 0 && n <= 3000)
             {
-                foreach (var token in _roman2Arabic.Keys)
-                {
-                    if (romanNumeral.StartsWith(token))
-                    {
-                        romanNumeral = romanNumeral.Substring(token.Length);
-                        arabicNumeral += _roman2Arabic[token];
-                    }
-                }
+                for (int i = 1; i < romanNum.Length; i++) ;
             }
-            return arabicNumeral;
+            return romanNum;
         }
-        //string[] romanOne = new string[] { "I", "II", "III" };
-        //string[] romanTen = new string[] { "X" };
-        //string[] romanHundred = new string[] { "C" };
-        //string[] romandThousand = new string[] { "M" };
-
-        //public string ConvertToRomanNumeral(int n)
-        //{
-        //    string romanNum = "";
-        //    if (n > 0 && n <= 3000)
-        //    {
-
-        //    }
-        //    return romanNum;
-        //}
 
 
     }

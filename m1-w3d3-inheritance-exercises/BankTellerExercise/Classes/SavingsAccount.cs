@@ -13,25 +13,26 @@ namespace BankTellerExercise.Classes
         : base(accountNumber, balance)
         {
         }
-        public SavingsAccount(string accountName, string accountNumber, decimal balance)
-         :base(accountName, accountNumber, balance)
-        {
-        }
+
         public override decimal Withdraw(decimal amountToWithdraw)
         {
-            
+
             base.Withdraw(amountToWithdraw);
-            if (amountToWithdraw > Balance)
+            if ((CalculateFutureBal(amountToWithdraw)) >= (0))
             {
-                return Balance;
+                base.Withdraw(2);
             }
-            else if (Balance <= 150M)
-            {
-                feeBalanceSav = Balance - 2;
-                return feeBalanceSav;
-            }
-            
             return Balance;
+        }
+
+        private decimal CalculateFutureBal(decimal amountToWithDraw)
+        {
+            decimal futureBal = Balance - amountToWithDraw;
+            if (futureBal < 150)
+            {
+                futureBal = futureBal - 2;
+            }
+            return futureBal;
         }
     }
 }
