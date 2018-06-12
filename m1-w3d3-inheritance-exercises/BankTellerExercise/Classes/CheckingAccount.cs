@@ -18,7 +18,8 @@ namespace BankTellerExercise.Classes
         {
         }
         public override decimal Withdraw(decimal amountToWithdraw)
-        { 
+        {
+            base.Withdraw(amountToWithdraw);
             feeBalance = Balance - 10;
             if ((Balance - amountToWithdraw) > (-100))
             {

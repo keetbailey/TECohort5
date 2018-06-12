@@ -31,7 +31,7 @@ namespace BankTellerExerciseTests.Classes
             Assert.AreEqual(500, savingsAccount.Balance);
         }
         //[TestMethod]
-        //public void Transfer() //transfer
+        //public void Transfer() //transfer 
         //{
         //    SavingsAccount savingsAccount = new SavingsAccount("", "", 0M);
         //    Decimal newBalance = savingsAccount.Transfer(new Decimal(500));
