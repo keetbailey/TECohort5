@@ -11,23 +11,33 @@ namespace WordSearch
     {
         static void Main(string[] args)
         {
-            string directory = Environment.CurrentDirectory;
-            string filename = "alices_adventures_in_wonderland.txt";
+            Console.WriteLine("What are you searching for?");
+            string searchString = Console.ReadLine();
+            Console.WriteLine("What is the file path?");
+            string filePath = Console.ReadLine();
 
-            string fullPath = Path.Combine(directory, filename);
+            string directory = Environment.CurrentDirectory;
+            string combinedFilePath = Path.Combine(directory, filePath);
 
             try
             {
-                using (StreamReader sr = new StreamReader(fullPath))
+                using (StreamReader sr = new StreamReader(combinedFilePath))
                 {
+                    int i = 1;
                     while (!sr.EndOfStream)
                     {
-                        string line = sr.ReadLine();
-                        Console.WriteLine(line);
+                        string lineContains = sr.ReadLine();
+                        bool searchFound = lineContains.IndexOf(searchString) > 0;
+                        if (searchFound)
+                        {
+                            Console.WriteLine($"{i} {lineContains}");
+                        }
+                        i++;
                     }
+
                 }
             }
-            catch(IOException e)
+            catch (IOException e)
             {
                 Console.WriteLine("Error reading the file");
                 Console.WriteLine(e.Message);

@@ -9,10 +9,12 @@ namespace Exercises
     public class KataRomanNumerals
     {
         string[] romanOne = new string[] { "I", "II", "III" };
+        string[] romandFive = new string[] { "V" };
         string[] romanTen = new string[] { "X" };
         string[] romanHundred = new string[] { "C" };
         string[] romandThousand = new string[] { "M" };
         string[] numericOne = new string[] { "1", "2", "3" };
+        string[] numericFive = new string[] { "5" };
         string[] numericTen = new string[] { "10"};
         string[] numericHundred = new string[] {"100"};
         string[] numericThousand = new string[] { "1000"};
