@@ -1,9 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace WordSearch
 {
@@ -14,10 +14,11 @@ namespace WordSearch
             Console.WriteLine("What are you searching for?");
             string searchString = Console.ReadLine();
             Console.WriteLine("What is the file path?");
-            string filePath = Console.ReadLine();
+            string inputFilePath = Console.ReadLine();
+
 
             string directory = Environment.CurrentDirectory;
-            string combinedFilePath = Path.Combine(directory, filePath);
+            string combinedFilePath = Path.Combine(directory, inputFilePath);
 
             try
             {
