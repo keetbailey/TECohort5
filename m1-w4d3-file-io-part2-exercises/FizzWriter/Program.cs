@@ -30,7 +30,7 @@ namespace FizzWriter
 
             try
             {
-                using (StreamWriter sw = new StreamWriter(filename, false))
+                using (StreamWriter sw = new StreamWriter(filename))
                 {
                     for (int i = 1; i < 301; i++)
                     {
