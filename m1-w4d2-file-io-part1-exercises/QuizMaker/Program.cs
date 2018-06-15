@@ -12,18 +12,7 @@ namespace QuizMaker
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the file name for the Quiz Questions:");
-            string inputFileName = Console.ReadLine();
-
             string combinedFilePath = Path.Combine(Environment.CurrentDirectory, inputFileName);
-
-            while (!File.Exists(combinedFilePath))
-            {
-                Console.WriteLine("Error: File not found");
-                inputFileName = Console.ReadLine();
-                combinedFilePath = Path.Combine(Environment.CurrentDirectory, inputFileName);
-            }
-
             List<QuestionsForQuiz> quizQuestions = FilePathForQuizQuestions(combinedFilePath);
 
             GetQuiz(quizQuestions);
@@ -32,7 +21,17 @@ namespace QuizMaker
         private static List<QuestionsForQuiz> FilePathForQuizQuestions(string combinedFilePath)
         {
             List<QuestionsForQuiz> quizQuestions = new List<QuestionsForQuiz>();
+            Console.WriteLine("Enter the file name for the Quiz Questions:");
+            string inputFileName = Console.ReadLine();
+
             
+
+            while (!File.Exists(combinedFilePath))
+            {
+                Console.WriteLine("Error: File not found");
+                inputFileName = Console.ReadLine();
+                combinedFilePath = Path.Combine(Environment.CurrentDirectory, inputFileName);
+            }
             try
             {
                 using (StreamReader sr = new StreamReader(combinedFilePath))
@@ -63,7 +62,7 @@ namespace QuizMaker
                 Console.WriteLine(question.Question);
                 for (int i=0; i<question.Answers.Length; i++)
                 {
-                    //Console.WriteLine( $"{ i + 2}) {quizQuestions.Answers[i]}");
+                    ////Console.WriteLine($"{ i + 2}) {quizQuestions.Answers[i]}");
                 }
                 Console.Write("\n Your Answer: ");
                 int answer = int.Parse(Console.ReadLine());

@@ -9,13 +9,13 @@ namespace WordSearch
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             Console.WriteLine("What are you searching for?");
             string searchString = Console.ReadLine();
             Console.WriteLine("What is the file path?");
             string inputFilePath = Console.ReadLine();
-
 
             string directory = Environment.CurrentDirectory;
             string combinedFilePath = Path.Combine(directory, inputFilePath);
@@ -27,8 +27,9 @@ namespace WordSearch
                     int i = 1;
                     while (!sr.EndOfStream)
                     {
+
                         string lineContains = sr.ReadLine();
-                        bool searchFound = lineContains.IndexOf(searchString) > 0;
+                        bool searchFound = lineContains.IndexOf(searchString, StringComparison.CurrentCultureIgnoreCase) > 0;
                         if (searchFound)
                         {
                             Console.WriteLine($"{i} {lineContains}");
@@ -37,6 +38,7 @@ namespace WordSearch
                     }
 
                 }
+
             }
             catch (IOException e)
             {
