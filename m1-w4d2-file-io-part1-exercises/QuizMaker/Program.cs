@@ -12,6 +12,7 @@ namespace QuizMaker
     {
         static void Main(string[] args)
         {
+            string inputFileName = "";
             string combinedFilePath = Path.Combine(Environment.CurrentDirectory, inputFileName);
             List<QuestionsForQuiz> quizQuestions = FilePathForQuizQuestions(combinedFilePath);
 
@@ -20,17 +21,18 @@ namespace QuizMaker
 
         private static List<QuestionsForQuiz> FilePathForQuizQuestions(string combinedFilePath)
         {
+
             List<QuestionsForQuiz> quizQuestions = new List<QuestionsForQuiz>();
             Console.WriteLine("Enter the file name for the Quiz Questions:");
             string inputFileName = Console.ReadLine();
+            combinedFilePath = Path.Combine(Environment.CurrentDirectory, inputFileName);
 
-            
+
 
             while (!File.Exists(combinedFilePath))
             {
                 Console.WriteLine("Error: File not found");
-                inputFileName = Console.ReadLine();
-                combinedFilePath = Path.Combine(Environment.CurrentDirectory, inputFileName);
+
             }
             try
             {
@@ -51,7 +53,6 @@ namespace QuizMaker
             }
             return quizQuestions;
         }
-
             private static void GetQuiz(List<QuestionsForQuiz> quizQuestions)
         {
             int numOfQuestions = 0;
@@ -62,24 +63,30 @@ namespace QuizMaker
                 Console.WriteLine(question.Question);
                 for (int i=0; i<question.Answers.Length; i++)
                 {
-                    ////Console.WriteLine($"{ i + 2}) {quizQuestions.Answers[i]}");
+                    Console.WriteLine($"{ i + 2}) {quizQuestions[i]}");
                 }
                 Console.Write("\n Your Answer: ");
                 int answer = int.Parse(Console.ReadLine());
 
-                //if (quizQuestions.IsCorrect(answer - 1))
-                //{
-                //    Console.WriteLine("Correct!\n");
-                //}
-                //else
-                //{
-                //    Console.WriteLine("Sorry, that is incorrect!\n");
-                //}
+                if (IsCorrect(answer- 1))
+                {
+                    Console.WriteLine("Correct!\n");
+                    numOfValidAnswers += 1;
+                }
+                else
+                {
+                    Console.WriteLine("Sorry, that is incorrect!\n");
+                }
 
-                //numOfQuestions += 1;
+                numOfQuestions += 1;
             }
 
             Console.WriteLine($"Your score is {numOfValidAnswers} questions correct out of {numOfQuestions} presented!");
+        }
+
+        private static bool IsCorrect(int v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -22,16 +22,20 @@ namespace QuizMaker
                 return answers.ToArray();
             }
         }
-
-        private int correctAnswer;
+        public int correctAnswer;
+        public bool IsCorrect(int userAnswer)
+        {
+            return correctAnswer == userAnswer;
+        }
 
         public QuestionsForQuiz(string line)
         {
+
             if (!String.IsNullOrEmpty(line))
             {
                 string[] spaces = line.Split(delimiter);
                 question = spaces[0];
-
+                
                 for (int i=1; i<spaces.Length; i++)
                 {
                     string answer = spaces[i].Trim(); //google tells me that Trim removes the whitespace! 
@@ -44,11 +48,7 @@ namespace QuizMaker
                     answers.Add(answer);
                 }
             }
-        }
 
-        public virtual bool IsCorrect(int userAnswer)
-        {
-            return correctAnswer == userAnswer;
         }
     }
 }
