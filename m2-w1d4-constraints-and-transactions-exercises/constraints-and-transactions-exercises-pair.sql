@@ -12,7 +12,7 @@ VALUES (5000, 'Smallville', 'USA', 'Kansas', 45001);
 -- 2. Add Kryptonese to the countrylanguage table. Kryptonese is spoken by 0.0001
 -- percentage of the 'USA' population.
 SELECT * FROM countrylanguage WHERE language is not null
-ORDER BY countrycode;
+ORDER BY countrycode DESC;
 
 INSERT INTO countrylanguage(countrycode, language, isofficial, percentage)
 VALUES('USA', 'Kryptonese', 0, 0.0001);
@@ -20,7 +20,7 @@ VALUES('USA', 'Kryptonese', 0, 0.0001);
 -- 3. After heated debate, "Kryptonese" was renamed to "Krypto-babble", change 
 -- the appropriate record accordingly.
 SELECT * FROM countrylanguage WHERE language is not null
-ORDER BY countrycode;
+ORDER BY countrycode DESC;
 
 
 UPDATE countrylanguage
@@ -29,6 +29,7 @@ WHERE language = 'Kryptonese';
 
 -- 4. Set the US captial to Smallville, Kansas in the country table.
 SELECT * FROM country WHERE code = 'USA'
+
 UPDATE country
 SET capital = 5000
 WHERE code = 'USA';
@@ -41,7 +42,6 @@ WHERE id = 5000;
 Succeeded
 
 -- 6. Return the US captial to Washington.
-SELECT * FROM city WHERE countrycode= 'USA'
 SELECT * FROM country WHERE code = 'USA'
 
 
@@ -61,8 +61,10 @@ WHERE id = 5000;
 -- (exclusive). 
 -- (590 rows affected)
 
+SELECT * FROM countrylanguage WHERE countrycode IN (SELECT code FROM country WHERE indepyear BETWEEN 1801 AND 1971);
+
 UPDATE countrylanguage
-SET isofficial = NOT isofficial
+SET isofficial = 0 
 WHERE countrycode IN 
 (
 	SELECT code 
@@ -70,7 +72,7 @@ WHERE countrycode IN
 	WHERE indepyear BETWEEN 1801 AND 1971
 );
 
---- Need to revisit - KSB
+--- Need to revisit - On this one, I unfortunately changed all values of isofficial to 0, rather than doing the inverse.  - KSB
 
 -- 9. Convert population so it is expressed in 1,000s for all cities. (Round to
 -- the nearest integer value greater than 0.)
@@ -84,12 +86,13 @@ WHERE population > 0;
 -- meters for all countries where French is spoken by more than 20% of the 
 -- population.
 -- (7 rows affected)
+SELECT name, surfacearea FROM country WHERE code IN (SELECT countrycode FROM countrylanguage WHERE language = 'French' AND percentage >= .20)
 
 UPDATE country
-SET surfacearea = surfacearea * 1609.344
+SET surfacearea = surfacearea * 1609.34 --1609 meters in mile 
 WHERE code IN 
 (
 	SELECT countrycode
 	FROM countrylanguage
-	WHERE language = 'French' AND percentage >= 20
+	WHERE language = 'French' AND percentage >= .20
 );
