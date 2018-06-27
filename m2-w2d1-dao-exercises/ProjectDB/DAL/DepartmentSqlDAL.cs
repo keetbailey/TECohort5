@@ -21,6 +21,15 @@ namespace ProjectDB.DAL
             connectionString = dbConnectionString;
         }
 
+        private Department GetDepartmentReader(SqlDataReader reader)
+        {
+            Department d = new Department();
+            d.Id = Convert.ToInt32(reader["department_id"]);
+            d.Name = Convert.ToString(reader["name"]);
+
+            return d;
+        }
+
         public List<Department> GetDepartments()
         {
             List<Department> output = new List<Department>();
@@ -48,15 +57,6 @@ namespace ProjectDB.DAL
             }
 
             return output;
-        }
-
-        private Department GetDepartmentReader(SqlDataReader reader)
-        {
-            Department d = new Department();
-            d.Id = Convert.ToInt32(reader["department_id"]);
-            d.Name = Convert.ToString(reader["name"]);
-
-            return d;
         }
 
         public bool CreateDepartment(Department newDepartment)
