@@ -13,6 +13,10 @@ namespace ProjectDB.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-        
+        public override string ToString()
+        {
+            return ProjectId.ToString().PadRight(5) + Name.PadRight(35) + StartDate.ToShortDateString().PadRight(15) + EndDate.ToShortDateString().PadRight(15);
+
+        }
     }
 }

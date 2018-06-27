@@ -17,6 +17,9 @@ namespace ProjectDB.Models
         public string Gender { get; set; }
         public DateTime HireDate { get; set; }
 
-        
+        public override string ToString()
+        {
+            return EmployeeId.ToString().PadRight(5) + (LastName + "," + FirstName).PadRight(30) + JobTitle.PadRight(30) + Gender.PadRight(3) + BirthDate.ToShortDateString().PadRight(10);
+        }
     }
 }
