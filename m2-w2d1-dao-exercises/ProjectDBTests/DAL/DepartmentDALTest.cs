@@ -1,14 +1,27 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ProjectDB.DAL;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+using ProjectDB.Models;
 
-namespace ProjectDBTests
+
+
+namespace ProjectDB.Tests.DAL
 {
-    [TestClass]
-    public class UnitTest1
+    [TestClass()]
+    public class DepartmentDALTests
     {
-        [TestMethod]
-        public void TestMethod1()
+        private TransactionScope tran; 
+        private string connectionString = @"Data Source = DESKTOP - 79DH3VU\SQLEXPRESS;Initial Catalog = ProjectOrganizer; Integrated Security = True"
+        
+        [TestInitialize]
+        public void Initialize()
         {
+            tran  = new TransactionScope()
         }
     }
 }
