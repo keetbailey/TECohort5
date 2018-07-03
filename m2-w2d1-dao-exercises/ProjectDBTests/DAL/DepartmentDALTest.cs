@@ -25,10 +25,9 @@ namespace ProjectDB.DAL.Tests
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
+                SqlCommand cmd;
 
                 conn.Open();
-
-                SqlCommand cmd;
 
                 cmd = new SqlCommand("SELECT COUNT(*) FROM department");
                 cmd.ExecuteReader();

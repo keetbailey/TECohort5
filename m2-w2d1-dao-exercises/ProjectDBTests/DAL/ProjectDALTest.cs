@@ -30,8 +30,10 @@ namespace ProjectDBTests.DAL
                 conn.Open();
 
                 cmd = new SqlCommand("SELECT * from project ");
-                cmd.ExecuteScalar();
+                cmd.ExecuteNonQuery();
                 cmd = new SqlCommand("SELECT COUNT(*) FROM project");
+                cmd.ExecuteScalar();
+
             }
         }
 

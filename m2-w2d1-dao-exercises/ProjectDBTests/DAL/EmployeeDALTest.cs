@@ -34,6 +34,9 @@ namespace ProjectDBTests
 
                 conn.Open();
 
+                cmd = new SqlCommand("SELECT * FROM Employee");
+                cmd.ExecuteReader();
+
                 cmd = new SqlCommand("SELECT COUNT(*) FROM employee WHERE first_name IS NOT NULL AND last_name IS NOT NULL");
                 cmd.ExecuteScalar();
                 
