@@ -17,9 +17,9 @@ namespace ProjectDB.DAL
         private const string SQL_CreateProject = "INSERT INTO project VALUES (@name, @fromdate, @todate);";
 
         // Single Parameter Constructor
-        public ProjectSqlDAL(string dbConnectionString)
+        public ProjectSqlDAL(string connectionString)
         {
-            connectionString = dbConnectionString;
+            this.connectionString = connectionString;
         }
 
         private Project GetProjectFromReader(SqlDataReader reader)

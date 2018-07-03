@@ -53,6 +53,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Transactions" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DepartmentDALTest.cs" />
@@ -61,10 +62,14 @@
     <Compile Include="DAL\EmployeeDALTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DAL\app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectDB\ProjectDB.csproj">
+      <Project>{659540b3-3a05-4895-a515-084e10d8b808}</Project>
+      <Name>ProjectDB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup Condition="$(VisualStudioVersion) == '15.0'">
     <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=13.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>

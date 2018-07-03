@@ -16,9 +16,9 @@ namespace ProjectDB.DAL
         private const string SQL_SearchEmployees = "SELECT * FROM employee WHERE first_name LIKE @firstname AND last_name LIKE @lastname;";
 
         // Single Parameter Constructor
-        public EmployeeSqlDAL(string dbConnectionString)
+        public EmployeeSqlDAL(string connectionString)
         {
-            connectionString = dbConnectionString;
+            this.connectionString = connectionString;
         }
 
         private Employee GetEmployeeReader(SqlDataReader reader)

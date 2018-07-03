@@ -16,9 +16,9 @@ namespace ProjectDB.DAL
         private const string SQL_NewDepartment = "INSERT INTO department VALUES (@name);";
 
         // Single Parameter Constructor
-        public DepartmentSqlDAL(string dbConnectionString)
+        public DepartmentSqlDAL(string connectionString)
         {
-            connectionString = dbConnectionString;
+            this.connectionString = connectionString;
         }
 
         private Department GetDepartmentReader(SqlDataReader reader)
