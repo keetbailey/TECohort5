@@ -1,0 +1,66 @@
+html {
+  font: 26px Courier;
+  color: white;
+}
+.box {
+  padding: 30px;
+  padding-left: -50px;
+  width: 30px;
+}
+.odd {
+  background-color: #ee3e64;
+}
+.even {
+  background-color: #44accf;
+}
+
+#box_0 {
+  position: absolute;;
+  top:  0px;
+  left: 0px;
+}
+#box_1 {
+  position: absolute;
+  top: 90px;
+  left: 90px;
+}
+#box_2 {
+  position: absolute;;
+  top: 180px;
+  left: 180px;
+}
+#box_3 {
+  position: absolute;;
+  top: 270px;
+  left: 270px;
+}
+#box_4 {
+  position: absolute;;
+  top: 360px;
+  left: 360px;
+}
+#box_5 {
+  position: absolute;;
+  bottom: 360px;
+  left: 360px;
+}
+#box_6 {
+  position: absolute;;
+  bottom: 270px;
+  left: 270px;
+}
+#box_7 {
+  position: absolute;;
+  bottom: 180px;
+  left: 180px;
+}
+#box_8 {
+  position: absolute;;
+  bottom: 90px;
+  left: 90px;
+}
+#box_9 {
+  position: absolute;;
+  bottom: 0px;
+  left:0px;
+}
