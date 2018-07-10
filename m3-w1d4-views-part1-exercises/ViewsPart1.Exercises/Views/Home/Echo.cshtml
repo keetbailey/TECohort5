@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<ViewsPart1.Exercises.RouteConfig>
 
 @{
-    string result = Request.QueryString["result"];
+    string word = Request.QueryString["word"];
+    string count = Request.QueryString["count"];
 }
 
 <!DOCTYPE html>
@@ -9,13 +10,15 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Fibonacci</title>
+    <title>Echo</title>
     <link href="~/styles.css" rel="stylesheet" />
+    <style>
+        li {
+            list-style-type: none;
+        }
+    </style>
 </head>
 <body>
-<div>
-
-
-</div>
+    
 </body>
 </html>

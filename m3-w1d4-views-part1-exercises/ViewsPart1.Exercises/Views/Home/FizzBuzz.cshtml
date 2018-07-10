@@ -1,18 +1,50 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<ViewsPart1.Exercises.RouteConfig>
+
+@{
+    string resultFizz = Request.QueryString["Fizz"];
+    string resultBuzz = Request.QueryString["Buzz"];
+    string FizzBuzz = Request.QueryString["FizzBuzz"];
+    int maxValue = 100;
+    int startFizzBuzz = 1;
+}
+
+<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>FizzBuzz</title>
+    <link href="~/styles.css" rel="stylesheet" />
 </head>
 <body>
-    <div> 
-        @for (int i=0, i<= ; i++)
-        {
-            <li>
-            </li>
-        }
 
-    </div>
+    @for (int i = 1; i <= maxValue; startFizzBuzz++)
+    {
+        if (i % 3 == 0 && i % 5 == 0)
+        {
+
+            @FizzBuzz
+
+        }
+        else if (i % 3 == 0)
+        {
+
+            @resultFizz
+
+        }
+        else if (i % 5 == 0)
+        {
+
+            @resultBuzz
+
+        }
+        else
+        {
+            i++;
+
+
+}
+
+    }
 </body>
 </html>
