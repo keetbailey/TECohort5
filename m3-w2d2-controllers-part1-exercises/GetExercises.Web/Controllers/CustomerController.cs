@@ -20,6 +20,20 @@ namespace GetExercises.Web.Controllers
         {
             this.dal = dal;
         }
-        
-    }
+        public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult SearchResult(CustSearchModel customer)
+        {
+            /* Call the DAL and pass the values as a model back to the View */
+
+            var custSearch = dal.SearchForCustomers(customer.FirstOrLastName, customer.SortOrder);
+
+            return View("SearchResult", custSearch); //revisit 
+        }
+
+}
+
+
 }

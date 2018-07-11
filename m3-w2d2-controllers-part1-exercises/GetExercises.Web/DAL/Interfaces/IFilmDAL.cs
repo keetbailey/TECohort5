@@ -9,6 +9,7 @@ namespace GetExercises.Web.DAL.Interfaces
 {
     public interface IFilmDAL
     {
-        IList<Film> GetFilmsBetween(string genre, int minLength, int maxLength);
+        IList<Film> GetFilmsBetween(string genre, int? minLength, int? maxLength);
+        
     }
 }

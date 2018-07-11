@@ -17,7 +17,7 @@ namespace GetExercises.Web.DAL
             this.connectionString = connectionString;
         }
 
-        public IList<Film> GetFilmsBetween(string genre, int minLength, int maxLength)
+        public IList<Film> GetFilmsBetween(string genre, int? minLength, int? maxLength)
         {
             IList<Film> films = new List<Film>();
 
@@ -25,21 +25,50 @@ namespace GetExercises.Web.DAL
                 JOIN film_category ON film_category.film_id = film.film_id 
                 JOIN category ON category.category_id = film_category.category_id
                 WHERE category.name = @category_name AND length BETWEEN @minLength AND @maxLength";
-
-            using(SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                conn.Open();
 
-                SqlCommand cmd = new SqlCommand(filmSearchSql, conn);
-                cmd.Parameters.AddWithValue("@category_name", genre);
-                cmd.Parameters.AddWithValue("@minLength", minLength);
-                cmd.Parameters.AddWithValue("@maxLength", maxLength);
 
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    films.Add(MapRowToFilm(reader));
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand(filmSearchSql, conn);
+                    cmd.Parameters.AddWithValue("@category_name", genre);
+                    cmd.Parameters.AddWithValue("@minLength", minLength);
+                    cmd.Parameters.AddWithValue("@maxLength", maxLength);
+                    //SqlParameter minLengthParam = cmd.Parameters.AddWithValue("@minLength", minLength);
+                    //SqlParameter maxLengthParam = cmd.Parameters.AddWithValue("@maxLength", maxLength);
+                    //if(minLength == null)
+                    //{
+                    //    cmd.Parameters.AddWithValue("@minLength", DBNull.Value);
+                    //}
+                    //else
+                    //{
+                    //    cmd.Parameters.AddWithValue("@minLength", minLength);
+                    //}
+
+                    //if(maxLength == null)
+                    //{
+                    //    cmd.Parameters.AddWithValue("@maxLength", DBNull.Value);
+                    //}
+                    //else
+                    //{
+                    //    cmd.Parameters.AddWithValue("@maxLength", maxLength);
+                    //}
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Film film = MapRowToFilm(reader);
+                        //films.Add(MapRowToFilm(reader));
+                        films.Add(film);
+                    }
                 }
+            }
+            catch (SqlException ex)
+            {
+                throw;
             }
 
             return films;

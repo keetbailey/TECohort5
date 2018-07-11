@@ -1,0 +1,42 @@
+﻿@model GetExercises.Web.Models.FilmSearchModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@using (Html.BeginForm("SearchResult", "Film"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Film</h4>
+        <hr />
+        <p class="filmsearch">Genre  Minimum Length  Maximum Length</p><br />
+
+        @*@Html.DropDownList(m => m.Genre, )*@   possibly using drop down list to pull from FilmSearchModel rather than Select 
+        <select name="Genre">
+            @*add more genres*@
+            <option value="Comedy">Comedy</option>
+            <option value="Drama">Drama</option>
+            <option value="Action">Action</option>
+            <option value="Horror">Horror</option>
+        </select>
+        @Html.TextBoxFor(m => m.MinLength, new { placeholder = "" })
+        @Html.TextBoxFor(m => m.MaxLength, new { placeholder = "" })
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
