@@ -21,10 +21,10 @@ namespace GetExercises.Web.DAL
         {
             IList<Film> films = new List<Film>();
 
-            string filmSearchSql = @"SELECT title, description, release_year, length, rating FROM film
-                JOIN film_category ON film_category.film_id = film.film_id 
-                JOIN category ON category.category_id = film_category.category_id
-                WHERE category.name = @category_name AND length BETWEEN @minLength AND @maxLength";
+            string filmSearchSql = @" SELECT title, description, release_year, length, rating FROM film " +
+                " JOIN film_category ON film_category.film_id = film.film_id " +
+                " JOIN category ON category.category_id = film_category.category_id " +
+                " WHERE category.name = @category_name AND length BETWEEN @minLength AND @maxLength ";
             try
             {
 

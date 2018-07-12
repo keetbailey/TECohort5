@@ -148,7 +148,6 @@
     <Content Include="Views\Actor\SearchResult.cshtml" />
     <Content Include="Views\Film\SearchResult.cshtml" />
     <Content Include="Views\Film\Index.cshtml" />
-    <Content Include="Views\Customer\Customer.cshtml" />
     <Content Include="Views\Customer\SearchResult.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <None Include="Web.Debug.config">

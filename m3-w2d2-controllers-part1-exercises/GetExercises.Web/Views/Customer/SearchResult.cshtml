@@ -4,7 +4,25 @@
 }
 
 <h2>SearchResult</h2>
+<form action=@Url.Action("FormResult", "Home") method=get>
+    @Html.TextBox("FormResult");
+</form>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Search" class="btn btn-default" />
+    </div>
+</div>
+<p2><b>Name</b> <b>Email</b> <b>Active</b></p2>
+<ol>
+    @foreach (var custSearch in Model)
+    {
 
+        <li>@custSearch.LastName </li>
+        <li>@custSearch.Email </li>
+        <li>@custSearch.IsActive</li>
+
+    }
+</ol>
 
 <div>
     @Html.ActionLink("Back to List", "Index")

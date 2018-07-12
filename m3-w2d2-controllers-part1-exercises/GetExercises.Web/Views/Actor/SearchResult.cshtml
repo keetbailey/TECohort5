@@ -4,28 +4,26 @@
     ViewBag.Title = "Search Result";
 }
 
-<p1>Last Name</p1>
-<form action="@Url.Action("FormResult", "Home")" method="get">
-    @*@Html.TextBoxFor(m => m.Name, new { placeholder = "enter name" })*@
-    </form>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Search" class="btn btn-default" />
-        </div>
+<p1>Last Name</p1>    @*need to figure out how to add search bar with entered last name*@
+<form action=@Url.Action("FormResult", "Home") method=get>
+    @Html.TextBox("FormResult");
+</form>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Search" class="btn btn-default" />
     </div>
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-    <p2><b>Name</b></p2>
-    <table>
-        @foreach (var actorList in Model)
-        {
-            <tr>
-                <td>@actorList.FirstName</td>
-                <td>@actorList.LastName</td>
-            </tr>
-        }
-    </table>
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
+</div>
+
+<p2><b>Name</b></p2>
+<table>
+    @foreach (var actorList in Model)
+    {
+        <tr>
+            <td>@actorList.FirstName</td>
+            <td>@actorList.LastName</td>
+        </tr>
+    }
+</table><br/>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

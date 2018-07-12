@@ -11,6 +11,7 @@ namespace GetExercises.Web.DAL
     public class ActorDAL : IActorDAL
     {
         private string connectionString;
+        private string actorSqlDal = "SELECT first_name, last_name FROM actor WHERE last_name LIKE @last_name ORDER BY last_name";
 
         public ActorDAL(string connectionString)
         {
@@ -24,7 +25,7 @@ namespace GetExercises.Web.DAL
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT first_name, last_name FROM actor WHERE last_name LIKE @last_name ORDER BY last_name", conn);
+                SqlCommand cmd = new SqlCommand(actorSqlDal, conn);
                 cmd.Parameters.AddWithValue("@last_name", "%" + lastNameSearch + "%");
 
                 SqlDataReader reader = cmd.ExecuteReader();
