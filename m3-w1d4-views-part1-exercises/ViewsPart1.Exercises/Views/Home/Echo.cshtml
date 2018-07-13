@@ -1,24 +1,37 @@
-﻿@model IEnumerable<ViewsPart1.Exercises.RouteConfig>
+﻿@{
+    Layout = null;
+}
 
 @{
     string word = Request.QueryString["word"];
-    string count = Request.QueryString["count"];
+    int count = int.Parse(Request.QueryString["count"]);
+
 }
+
 
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/Echo.css" rel="stylesheet" />
+
     <title>Echo</title>
-    <link href="~/styles.css" rel="stylesheet" />
-    <style>
-        li {
-            list-style-type: none;
-        }
-    </style>
 </head>
 <body>
-    
+    <div>
+        <h2>Exercise 3: Echo</h2>
+        <ul>
+            @for (int i = count; i <= count; i--)
+            {
+                <li style="font-size:@i%" ;>@word</li>
+                if (i != 0)
+                {
+                     i--;
+                }
+            }
+
+        </ul>
+    </div>
 </body>
 </html>

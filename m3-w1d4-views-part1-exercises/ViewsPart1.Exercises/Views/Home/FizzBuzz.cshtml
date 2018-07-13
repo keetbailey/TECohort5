@@ -1,11 +1,6 @@
-﻿@model IEnumerable<ViewsPart1.Exercises.RouteConfig>
-
+﻿
 @{
-    string resultFizz = Request.QueryString["Fizz"];
-    string resultBuzz = Request.QueryString["Buzz"];
-    string FizzBuzz = Request.QueryString["FizzBuzz"];
-    int maxValue = 100;
-    int startFizzBuzz = 1;
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -17,30 +12,30 @@
     <link href="~/styles.css" rel="stylesheet" />
 </head>
 <body>
-
-    @for (int i = 1; i <= maxValue; startFizzBuzz++)
+    <h1>Exercise 1: FizzBuzz!</h1>
+    @for (int i = 1; i <=100; i++)
     {
         if (i % 3 == 0 && i % 5 == 0)
         {
 
-            @FizzBuzz
-
+            <p style="color:purple;font-size:x-large; margin:0px;padding:0px">FizzBuzz!</p>
+        
         }
         else if (i % 3 == 0)
         {
 
-            @resultFizz
+           <p style="color:blue;margin:0px;padding:0px">Fizz!</p>
 
         }
         else if (i % 5 == 0)
         {
 
-            @resultBuzz
+            <p style="color:red;margin:0px;padding:0px">Buzz!</p>
 
         }
         else
         {
-            i++;
+            <p style="margin:0px;padding:0px">@i</p>
 
 
 }

@@ -1,8 +1,14 @@
-﻿@model IEnumerable<ViewsPart1.Exercises.RouteConfig>
-
+﻿
 @{
-    string result = Request.QueryString["result"];
+    Layout = null;  //<-- ignore this for now, it is used to create reusable site layouts
 }
+
+
+@{  int a = 1;
+    int b = 1;
+    int c = 1;
+}
+
 
 <!DOCTYPE html>
 
@@ -10,12 +16,24 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Fibonacci</title>
-    <link href="~/styles.css" rel="stylesheet" />
+    <link href="~/Style.css" rel="stylesheet" />
 </head>
 <body>
-<div>
+    <div>
+        <h1>Exercise 2: Fibonacci</h1>
+        <ul style="list-style-type: none; margin:0px; padding: 0px">
+            <li>1</li>
+        </ul>
+        @for (int i = 0; i < 24; i++)
+        {
+            a = b;
+            b = c;
+            c = a + b;
+            <ul style="list-style-type: none; margin:0px; padding: 0px">
+                <li>@c</li>
+            </ul>
 
-
-</div>
+        }
+    </div>
 </body>
 </html>
