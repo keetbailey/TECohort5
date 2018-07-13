@@ -6,8 +6,7 @@
 
 <h2>Index</h2>
 
-
-@using (Html.BeginForm("SearchResult", "Film"))
+@using (Html.BeginForm("SearchResult", "Film"))    //Form is only working when min and max values are provided - searching genre by itself produces exception error in SearchResult View
 {
     @Html.AntiForgeryToken()
 
@@ -16,7 +15,7 @@
         <hr />
         <p class="filmsearch">Genre  Minimum Length  Maximum Length</p><br />
 
-        @*@Html.DropDownList(m => m.Genre, )*@   @*possibly using drop down list to pull from FilmSearchModel rather than Select*@ 
+        @*@Html.DropDownList(m => m.Genre, )*@   @*possibly using drop down list to pull from FilmSearchModel rather than Select*@
         <select name="Genre">
             @*add more genres*@
             <option value="Comedy">Comedy</option>
@@ -24,10 +23,9 @@
             <option value="Action">Action</option>
             <option value="Horror">Horror</option>
         </select>
-        @Html.TextBoxFor(m => m.MinLength, new { placeholder = "" })
-        @Html.TextBoxFor(m => m.MaxLength, new { placeholder = "" })
-
-
+        @Html.TextBoxFor(m => m.MinLength, new { placeholder = "Optional Min Value" })
+        @Html.TextBoxFor(m => m.MaxLength, new { placeholder = "Optional Max Value" })
+    
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

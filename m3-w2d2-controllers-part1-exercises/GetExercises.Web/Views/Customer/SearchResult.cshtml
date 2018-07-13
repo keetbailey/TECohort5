@@ -1,4 +1,4 @@
-﻿@model GetExercises.Web.Models.Customer
+﻿@model IList<GetExercises.Web.Models.Customer>
 @{
     ViewBag.Title = "SearchResult";
 }
@@ -13,7 +13,8 @@
     </div>
 </div>
 <p2><b>Name</b> <b>Email</b> <b>Active</b></p2>
-<ol>
+<div>
+<ul>
     @foreach (var custSearch in Model)
     {
 
@@ -22,7 +23,8 @@
         <li>@custSearch.IsActive</li>
 
     }
-</ol>
+</ul>
+</div>
 
 <div>
     @Html.ActionLink("Back to List", "Index")

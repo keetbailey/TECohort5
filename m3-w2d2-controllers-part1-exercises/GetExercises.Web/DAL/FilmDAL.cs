@@ -37,31 +37,31 @@ namespace GetExercises.Web.DAL
                     cmd.Parameters.AddWithValue("@category_name", genre);
                     cmd.Parameters.AddWithValue("@minLength", minLength);
                     cmd.Parameters.AddWithValue("@maxLength", maxLength);
+                    
                     //SqlParameter minLengthParam = cmd.Parameters.AddWithValue("@minLength", minLength);
                     //SqlParameter maxLengthParam = cmd.Parameters.AddWithValue("@maxLength", maxLength);
-                    //if(minLength == null)
+                    //if (minLengthParam == null)
                     //{
                     //    cmd.Parameters.AddWithValue("@minLength", DBNull.Value);
                     //}
                     //else
                     //{
-                    //    cmd.Parameters.AddWithValue("@minLength", minLength);
+                    //    cmd.Parameters.AddWithValue("@minLength", minLengthParam);
                     //}
 
-                    //if(maxLength == null)
+                    //if (maxLengthParam == null)
                     //{
                     //    cmd.Parameters.AddWithValue("@maxLength", DBNull.Value);
                     //}
                     //else
                     //{
-                    //    cmd.Parameters.AddWithValue("@maxLength", maxLength);
+                    //    cmd.Parameters.AddWithValue("@maxLength", maxLengthParam);
                     //}
 
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
                         Film film = MapRowToFilm(reader);
-                        //films.Add(MapRowToFilm(reader));
                         films.Add(film);
                     }
                 }

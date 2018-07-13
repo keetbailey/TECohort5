@@ -5,7 +5,7 @@ using System.Web;
 
 namespace GetExercises.Web.Models
 {
-    public class FilmSearchModel:Film
+    public class FilmSearchModel : Film
     {
         public string Genre { get; set; }
         public int? MinLength { get; set; }
