@@ -3,29 +3,29 @@
     ViewBag.Title = "SearchResult";
 }
 
-<h2>SearchResult</h2>
-<form action=@Url.Action("FormResult", "Home") method=get>
-    @Html.TextBox("FormResult");
-</form>
+<p1>Search Result</p1>
+@*<form action=@Url.Action("FormResult", "Home") method=get>
+    @Html.TextBox("FormResult");*@
 <div class="form-group">
     <div class="col-md-offset-2 col-md-10">
         <input type="submit" value="Search" class="btn btn-default" />
     </div>
 </div>
 <p2><b>Name</b> <b>Email</b> <b>Active</b></p2>
-<div>
-<ul>
+<table>
     @foreach (var custSearch in Model)
     {
+        <tr>
 
-        <li>@custSearch.LastName </li>
-        <li>@custSearch.Email </li>
-        <li>@custSearch.IsActive</li>
+            <td>@custSearch.LastName </td>
+            <td>@custSearch.Email </td>
+            <td>@custSearch.IsActive</td>
 
+        </tr>
     }
-</ul>
-</div>
+</table>
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+@*</form>*@
