@@ -4,8 +4,8 @@
 }
 
 <p1>Search Result</p1>
-@*<form action=@Url.Action("FormResult", "Home") method=get>
-    @Html.TextBox("FormResult");*@
+<form action=@Url.Action("FormResult", "Home") method=get>
+    @Html.TextBox("FormResult");
 <div class="form-group">
     <div class="col-md-offset-2 col-md-10">
         <input type="submit" value="Search" class="btn btn-default" />
@@ -16,7 +16,7 @@
     @foreach (var custSearch in Model)
     {
         <tr>
-
+            <td>@custSearch.FirstName</td>
             <td>@custSearch.LastName </td>
             <td>@custSearch.Email </td>
             <td>@custSearch.IsActive</td>
@@ -28,4 +28,4 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-@*</form>*@
+</form>

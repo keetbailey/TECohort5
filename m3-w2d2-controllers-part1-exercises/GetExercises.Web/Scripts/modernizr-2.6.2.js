@@ -878,7 +878,8 @@ window.Modernizr = (function( window, document, undefined ) {
         //   miketaylr.com/code/input-type-attr.html
         // spec: www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#input-type-attr-summary
 
-        // Only input placeholder is tested while textarea's placeholder is not.
+        // Only input 
+ is tested while textarea's placeholder is not.
         // Currently Safari 4 and Opera 11 have support only for the input placeholder
         // Both tests are available in feature-detects/forms-placeholder.js
         Modernizr['input'] = (function( props ) {

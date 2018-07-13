@@ -6,7 +6,7 @@
 
 <h2>Index</h2>
 
-@using (Html.BeginForm("SearchResult", "Film"))    //Form is only working when min and max values are provided - searching genre by itself produces exception error in SearchResult View
+@using (Html.BeginForm("SearchResult", "Film", FormMethod.Get))    //Form is only working when min and max values are provided - searching genre by itself produces exception error in SearchResult View
 {
     @Html.AntiForgeryToken()
 

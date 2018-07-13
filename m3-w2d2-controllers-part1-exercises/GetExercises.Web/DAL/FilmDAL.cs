@@ -35,28 +35,23 @@ namespace GetExercises.Web.DAL
 
                     SqlCommand cmd = new SqlCommand(filmSearchSql, conn);
                     cmd.Parameters.AddWithValue("@category_name", genre);
-                    cmd.Parameters.AddWithValue("@minLength", minLength);
-                    cmd.Parameters.AddWithValue("@maxLength", maxLength);
-                    
-                    //SqlParameter minLengthParam = cmd.Parameters.AddWithValue("@minLength", minLength);
-                    //SqlParameter maxLengthParam = cmd.Parameters.AddWithValue("@maxLength", maxLength);
-                    //if (minLengthParam == null)
-                    //{
-                    //    cmd.Parameters.AddWithValue("@minLength", DBNull.Value);
-                    //}
-                    //else
-                    //{
-                    //    cmd.Parameters.AddWithValue("@minLength", minLengthParam);
-                    //}
+                    if (minLength == null)
+                    {
+                        cmd.Parameters.AddWithValue("@minLength", 0);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@minLength", minLength);
+                    }
 
-                    //if (maxLengthParam == null)
-                    //{
-                    //    cmd.Parameters.AddWithValue("@maxLength", DBNull.Value);
-                    //}
-                    //else
-                    //{
-                    //    cmd.Parameters.AddWithValue("@maxLength", maxLengthParam);
-                    //}
+                    if (maxLength == null)
+                    {
+                        cmd.Parameters.AddWithValue("@maxLength", 9999);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@maxLength", maxLength);
+                    }
 
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
