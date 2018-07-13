@@ -1,36 +1,37 @@
 ﻿@{
     Layout = null;
-}
-
-@{
     string word = Request.QueryString["word"];
-    int count = int.Parse(Request.QueryString["count"]);
-
+    string count = Request.QueryString["count"];
 }
-
 
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link href="~/Echo.css" rel="stylesheet" />
-
     <title>Echo</title>
 </head>
 <body>
+    <h1>Exercise 3: Echo</h1>
     <div>
-        <h2>Exercise 3: Echo</h2>
-        <ul>
-            @for (int i = count; i <= count; i--)
-            {
-                <li style="font-size:@i%" ;>@word</li>
-                if (i != 0)
+        <ul style="list-style-type:none">
+            @{
+                if (String.IsNullOrEmpty(word))
                 {
-                     i--;
+                    word = "Hello";
+                }
+                if (String.IsNullOrEmpty(count))
+                {
+                    count = "25";
+                }
+
+                for (int i = int.Parse(count); i > 0; i--)
+                {
+                    <li style="font-size: @i.ToString()px;">
+                        @word
+                    </li>
                 }
             }
-
         </ul>
     </div>
 </body>
