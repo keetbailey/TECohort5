@@ -7,13 +7,14 @@
 <p1>Search Results!</p1>
 
 <div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Search" class="btn btn-default" />
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Search" class="btn btn-default" />
+        </div>
     </div>
-</div>
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
 <p2><b>Title</b></p2> <p2><b>Description</b></p2> <p2><b>Release Year</b></p2> <p2><b>Length</b></p2> <p2><b>Rating</b></p2>
 <table>
     @foreach (var filmList in Model)
@@ -28,6 +29,3 @@
     }
 </table>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

@@ -5,27 +5,27 @@
 
 <p1>Search Result</p1>
 <form action=@Url.Action("FormResult", "Home") method=get>
-    @Html.TextBox("FormResult");
-<div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Search" class="btn btn-default" />
+    @Html.TextBox("FormResult")
+    <div class="form-group">
+        <div>
+
+            <input type="submit" value="Search" class="btn btn-default" />@Html.ActionLink("Back to List", "Index")
+        </div>
     </div>
-</div>
-<p2><b>Name</b> <b>Email</b> <b>Active</b></p2>
-<table>
-    @foreach (var custSearch in Model)
-    {
-        <tr>
-            <td>@custSearch.FirstName</td>
-            <td>@custSearch.LastName </td>
-            <td>@custSearch.Email </td>
-            <td>@custSearch.IsActive</td>
+    <p2><b>Name</b> <b>Email</b> <b>Active</b></p2>
+    <table>
+        @foreach (var custSearch in Model)
+        {
+            <tr>
+                <td>@custSearch.FirstName</td>
+                <td>@custSearch.LastName </td>
+                <td>@custSearch.Email </td>
+                <td>@custSearch.IsActive</td>
 
-        </tr>
-    }
-</table>
+            </tr>
+        }
+    </table>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <div>
+    </div>
 </form>
