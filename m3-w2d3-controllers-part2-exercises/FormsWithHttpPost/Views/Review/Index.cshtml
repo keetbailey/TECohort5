@@ -1,0 +1,29 @@
+﻿@model FormsWithHttpPost.Models.Review
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Squirrel Party Review</h2>
+
+@using (Html.BeginForm("Index", "Review", FormMethod.Post))
+{
+    <div class="formInputGroup">
+        @Html.Label("Username", "Enter your username")
+        @Html.TextBoxFor(m => m.Username)
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("Rating", "How many stars?")
+        @Html.TextBoxFor(m => m.Rating)
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("Title", "What title?")
+        @Html.TextBoxFor(m => m.Title)
+    </div>
+    <div class="formInputGroup">
+        @Html.Label("Message", "Please share your review")
+        @Html.TextAreaFor(m => m.Message)
+    </div>
+    <button class="formSubmitButton">Submit</button>
+}
