@@ -1,0 +1,30 @@
+﻿@model List<SSGeek.Models.Product>
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SSGeek Gift Shop</h2>
+
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Price</td>
+        <td>Image</td>
+        @foreach (var product in Model)
+        {
+        <tr>
+            <td>@product.Name</td>
+            <td>@product.Description</td>
+            <td>@product.Price.ToString("C")</td>
+            <td>
+                <form action="@Url.Action("AddToCart")" method="post">
+
+                    <button>Add to Cart</button>
+                </form>
+            </td>
+        </tr>
+    }
+
+    </table>

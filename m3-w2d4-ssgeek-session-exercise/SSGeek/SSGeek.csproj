@@ -128,6 +128,7 @@
     <Compile Include="Controllers\CalculatorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlanetsController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="DAL\ForumPostSqlDAL.cs" />
     <Compile Include="DAL\IForumPostDAL.cs" />
     <Compile Include="DAL\IProductDAL.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Models\AlienAgeModel.cs" />
     <Compile Include="Models\ForumPost.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\TriviaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -146,6 +148,10 @@
     <Content Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Planets\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\ShoppingCart\ViewCart.cshtml" />
+    <Content Include="Views\ShoppingCart\Detail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
