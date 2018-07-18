@@ -11,13 +11,19 @@ namespace FormsWithHttpPost.Controllers
 {
     public class ReviewController : Controller
     {
-        private IReviewDAL reviewDal;
+        private readonly IReviewDAL reviewDal;
 
+        public ReviewController(IReviewDAL reviewDal) //dependency injection - ninject 
+        {
+            this.reviewDal = reviewDal;
+        }
 
-        //public ReviewController(IReviewDAL reviewDal)
+        //public ReviewController()  //without dependency injection 
         //{
-        //    this.reviewDal = reviewDal;
+        //    reviewDal = new ReviewSqlDAL(ConfigurationManager.ConnectionStrings["SquirrelConnectionString"].ConnectionString);
+
         //}
+
 
         // GET: Review
         public ActionResult Index()

@@ -9,7 +9,7 @@ namespace FormsWithHttpPost.DAL
 {
     public class ReviewSqlDAL : IReviewDAL
     {
-        private string connectionString = "Data Source=./sqlexpress;Initial Catalog = SquirrelReviews; Integrated Security = True";
+        private readonly string connectionString;
         private const string SQL_AllReviews = "SELECT * FROM reviews";
         private const string SQL_InsertReview = "INSERT INTO reviews VALUES(@username, @rating, @review_title, @review_text, @review_date);";
 
