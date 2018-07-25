@@ -80,7 +80,6 @@ section form div {
 }
 
 /* Individual Page Styles */
-
-.img dummy{
-    width: 50px
+table .table:nth-child(2n) {
+    background-color: lightgrey;
 }

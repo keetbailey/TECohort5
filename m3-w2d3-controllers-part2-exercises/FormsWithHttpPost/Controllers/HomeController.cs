@@ -11,12 +11,18 @@ namespace FormsWithHttpPost.Controllers
 {
     public class HomeController : Controller
     {
+        private IReviewDAL reviewDAL;
+
+        public HomeController()
+        {
+            reviewDAL = new ReviewSqlDAL(ConfigurationManager.ConnectionStrings["SquirrelConnectionString"].ConnectionString);
+        }
         public ActionResult Index()
         {
-            IList<Review> reviews = new List<Review>();
-
-            return View("Index", reviews);
+            IList<Review> getReviews = reviewDAL.GetAllReviews();
+            return View("Index", getReviews);
         }
+       
     }
 }
 

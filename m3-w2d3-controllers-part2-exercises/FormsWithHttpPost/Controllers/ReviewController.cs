@@ -37,7 +37,7 @@ namespace FormsWithHttpPost.Controllers
         {
             reviewDal.SaveReview(newReview);
 
-            return RedirectToAction("Confirmation", "Review");
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]

@@ -5,25 +5,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<img class="dummy" src="~/Content/forDummies.png" />
+<img style="height: 200px; width: 150px" src="~/Content/forDummies.png" />
 <h2>All Reviews</h2>
-
-<table>
+<body>
+<table class="table"> @*table class not working in CSS*@
     @foreach (var item in Model)
     {
         <tr>
             <td>
-                @item.Title
-                @for (int i= 1; i<= item.Rating; i++)
+                @for (int i = 1; i <= item.Rating; i++)
                 {
-                    <img src="~/Content/star.png"/>
+                    <img src="~/Content/star.png" />
                 }
+                <br />
+                @item.Title
 
-                By @item.Username @item.ReviewDate.ToString() <br/>
+            </td>
+            <td>
+                By @item.Username @item.ReviewDate.ToString() <br />
+            </td>
+            <td>
                 @item.Message
             </td>
 
         </tr>
     }
 </table>
+</body>
