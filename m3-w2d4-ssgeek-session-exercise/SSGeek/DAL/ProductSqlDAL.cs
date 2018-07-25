@@ -18,7 +18,7 @@ namespace SSGeek.DAL
             this.connectionString = connectionString;
         }
 
-        public Product GetProduct(int id)
+        public Product GetProduct(int? id)
         {
             Product product = null;
         

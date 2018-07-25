@@ -12,24 +12,50 @@ namespace SSGeek.Models
         //will want property that can add up total of all subtotal values 
         //will want method that can alter cart (add to likely) 
 
-        public class ShoppingCartItem
+        public double Total //product price*quantity
         {
-            public Product Product { get; set; }
-            public int Quantity { get; set; }
-
-            
-            public double Subtotal //product price*quantity
+            get
             {
-                get
+                return Items.Sum(item => item.Subtotal);
+            }
+        }
+
+        public void AddUpdateCart(Product product, int quantity)
+        {
+            var currentItem = Items.Where(item => item.Product.ProductId == product.ProductId).FirstOrDefault();
+
+            if(currentItem != null)
+            {
+                currentItem.Quantity = quantity;
+            }
+            else
+            {
+                Items.Add(new ShoppingCartItem()
                 {
-                    if (Product == null)
-                    {
-                        return 0.00;
-                    }
-                    else
-                    {
-                        return Product.Price * Quantity;
-                    }
+                    Product = product,
+                    Quantity = quantity
+                });
+            }
+        }
+    }
+
+    public class ShoppingCartItem
+    {
+        public Product Product { get; set; }
+        public int Quantity { get; set; }
+
+        public double Subtotal
+        {
+            get
+            {
+                if (Product == null)
+                {
+                    return 0.00;
+                    
+                }
+                else
+                {
+                    return Product.Price * Quantity;
                 }
             }
         }

@@ -1,17 +1,46 @@
-﻿@model List<SSGeek.Models.Product>
-
+﻿@model SSGeek.Models.ShoppingCart
 @{
-    ViewBag.Title = "Detail";
+    ViewBag.Title = "Shopping Cart";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Detail</h2>
+<section class="centeredPanel">
+    <h2>Solar System Geek Gift Shop</h2>
 
-@*<div>
-        <img src="@Url.Content("~/Content/img/" + Model.ImageName)" />
-        <div>
-            <p>@Model.Name</p>
-            <p >@Model.Price.ToString("C")</p>
-            <p>@Model.Description</p>
-            </div>
-    </div>*@
+    @if (Model.Items.Count > 0)
+    {
+        <table>
+            <tr>
+                <td></td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Qty.</td>
+                <td>Total</td>
+            </tr>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td><img src="@Url.Content("~/Content/img/" + item.Product.ImageName)" /></td>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Product.Price.ToString("C")</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Subtotal.ToString("C")</td>
+                </tr>
+            }
+            <tr>
+                <td>Total</td>
+                <td>@Model.Total.ToString("C")
+            </tr>
+            <tr>
+                <td></td>
+                <td>@Html.ActionLink("Checkout", "Index", "ShoppingCart")</td>
+            </tr>
+        </table>
+
+
+    }
+    else
+    {
+        <p>Cart is empty</p>
+    }
+</section>

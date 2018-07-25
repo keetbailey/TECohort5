@@ -1,4 +1,4 @@
-﻿@model List<SSGeek.Models.Product>
+﻿@model SSGeek.Models.Product
 @{
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,19 +12,25 @@
         <td>Description</td>
         <td>Price</td>
         <td>Image</td>
-        @foreach (var product in Model)
+
+    <tr>
+        <td>@Model.Name</td>
+        <td>@Model.Description</td>
+        <td>@Model.Price.ToString("C")</td>
+
+        @using (Html.BeginForm("AddToCart", "ShoppingCart", FormMethod.Post))
         {
-        <tr>
-            <td>@product.Name</td>
-            <td>@product.Description</td>
-            <td>@product.Price.ToString("C")</td>
-            <td>
-                <form action="@Url.Action("AddToCart")" method="post">
 
-                    <button>Add to Cart</button>
-                </form>
-            </td>
-        </tr>
-    }
+        <td>
+            @Html.Label("Quantity", "Number of items")
+            @Html.TextBox("quantity")
+            <form action="@Url.Action("AddToCart")" method="post">
 
-    </table>
+                <button>Add to Cart</button>
+            </form>
+        </td>
+        }
+    </tr>
+
+
+</table>

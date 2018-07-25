@@ -10,6 +10,6 @@ namespace SSGeek.DAL
     public interface IProductDAL
     {
         List<Product> GetProducts();
-        Product GetProduct(int id);
+        Product GetProduct(int? id);
     }
 }

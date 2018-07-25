@@ -13,12 +13,11 @@
         @foreach (var product in Model)
         {
            <a href="@Url.Action("Detail", "Store", new { id = product.ProductId })">
-               <img src="@Url.Content("~/Content/img/" + product.ImageName)" /></a>
+               <img style="height:200px; width: 250px" src="@Url.Content("~/Content/img/" + product.ImageName)" /></a>
         
-                @product.Name
-                @product.Price.ToString("C")
+               <p style="color:red"> @product.Name </p>
+                <p style="color:red"> @product.Price.ToString("C") </p>
                 
-        
     }
 
     </section>
